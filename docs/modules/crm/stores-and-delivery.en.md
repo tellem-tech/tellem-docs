@@ -18,7 +18,7 @@ Click **Create**, or **Actions → Create** on a phone. Choose **Single store** 
 
 - Enter the store's name, city, and street. Its warehouse and pickup point are created with it; add products through [Inventory](inventory.md).
 - Add at least one store to a chain. **Add store** selects an existing one; **Create** in the selection window adds a new one. A store can belong to several chains; its name must be unique within a chain.
-- **Temporarily closed** keeps the chain in the customer's list but hides its products. **Store chain closure message** is not displayed in the app. **Archived** hides the entire chain.
+- **Temporarily closed** keeps the chain in the customer's list and blocks checkout. Fill in **Store chain closure message**: customers see it on the home screen, in the catalog and at checkout. Without a message, they see “Ordering is unavailable”. Change the status back to **Opened** to accept orders again. **Archived** hides the entire chain.
 
 ???+ example "Example: a single store"
 
