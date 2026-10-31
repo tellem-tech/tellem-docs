@@ -28,7 +28,7 @@ Open **Settings → General**.
 
 ### Store customer notice { #customer-notice }
 
-Create a message, such as an order delay notice, and select a chain. Only signed-in customers of that chain see it. Enable it using **Active** in the table: this switch disables the chain's other notices. The switch inside the notice editor does not. Customers see the message on the app's home screen, below the **Catalog** and **Favorites** buttons.
+Create a message, such as an order delay notice, and select a chain. Only signed-in customers of that chain see it. Enable **Active** in the table or in the notice editor: saving it disables the chain's other notices. Customers see the message on the app's home screen, below the **Catalog** and **Favorites** buttons.
 
 ??? example "Example: an order preparation time notice"
 
