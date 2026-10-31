@@ -38,6 +38,26 @@ Use the information button to read metric formulas. Changes are compared with th
 
 Inactive guests have no completed orders in the 90 days ending at the selected period's end, or at the current moment if earlier. Without filters, the chain-wide base includes guests who have never purchased. With a location selected, including the only location selected automatically, or a city, order type, or platform filter, it includes all-time buyers in that selection.
 
+## Sales by day and time { #sales-by-time }
+
+In **Analytics → Overview**, choose a period and locations. Use **Breakdown** in the revenue card:
+
+- **Over time**: totals by date, week or month, depending on the length of the period.
+- **By weekday**: totals for Mondays, Tuesdays and the other weekdays within the selected period.
+- **By time of day**: **Start of day [00:00,11:00)**, **Middle of day [11:00,16:00)** and **End of day [16:00,24:00)** in the CRM time zone.
+
+Each breakdown shows revenue and the number of completed orders. These are period totals: a partial week can give some weekdays more occurrences than others. Use the purchase distribution to plan promotions; the chart does not measure the effect of mailing send times.
+
+The card’s **Download CSV** button exports the selected breakdown with the current filters. The new and returning customers chart and the Home sales chart keep their date grouping.
+
+??? example "Example: revenue breakdowns and CSV"
+
+    Demo data, recorded in the Russian interface.
+
+    <figure markdown="span">
+    [![Analytics → Overview: calendar, weekday and time-of-day breakdowns, then CSV export of the selected breakdown.](../../media/crm/crm-sales-breakdowns.en.gif){ width="960" height="540" loading=lazy }](../../media/crm/crm-sales-breakdowns.en.gif)
+    </figure>
+
 ## Customers and RFM { #rfm }
 
 In **Analytics → Customers**, buyers are grouped by how recently they purchased, how often they buy, and how much they spend. This grouping method is called RFM. Select a segment to view its customers, then open a guest's record. “All customers” beside the matrix also includes guests without purchases in the chain-wide view.
@@ -79,7 +99,7 @@ In **Analytics → Repeat orders**, under “Cohort analysis”, compare repeat 
 
 ## Overview { #overview }
 
-In **Analytics → Overview**, “Owner” mode shows key metrics and location comparisons. “Marketer” adds detailed breakdowns of sales, products, cancellations, payments, and registrations.
+In **Analytics → Overview**, you can view sales metrics, location comparisons, detailed breakdowns, and registrations. Under **Order diagnostics**, **Failed payments** shows the share of orders with a payment error among all orders in the selected period.
 
 “Registrations” includes guests who registered during the period, including those without purchases. Order type and platform filters keep guests with matching purchases. Without tags, “First known attribution”, meaning the first known customer source, shows “Unknown”; it is not inferred from the order platform.
 
