@@ -118,6 +118,8 @@ For one item, open **Catalog → Products → Create → Add from iiko** and cho
 
 ### Add or update a restaurant menu { #import-products }
 
+After changing the menu in iiko, run a full import using the steps below. It updates products, prices, photos, sizes, and extras. [Hourly stop list checks](#-) do not update the menu.
+
 !!! warning "Import enables product visibility"
     New products with positive stock are available to customers immediately. Repeating the import enables **Show in catalog** for previously hidden cards too; manual archive settings and sale status under **Inventory** are preserved. Check that the menu is ready for sale before importing. Manually edited prices apply until the next import.
 
