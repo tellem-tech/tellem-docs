@@ -55,6 +55,8 @@ A chain counts stock from open stores with “On sale” enabled, subtracts prod
 | Archive the product | **Catalog → Products → Actions → Archive** | **Catalog → Archive → Publish** |
 | Disable “Show in catalog” for a variant | Product record → “Main” → variants | Enable it and save the record |
 
+For [iiko products](iiko.md#import-products), manual archiving and restoration are unavailable; the menu import manages their state.
+
 Changing quantity or sale availability leaves an “Out of stock” label when “Assortment with zero quantity” is on and hides the product when it is off. A product is sold out when no store of the chain has it. Archiving hides it regardless of stock. A variant's checkbox removes it from catalog lists; it remains selectable inside the product card, as in the [color example](product-colors.md).
 
 ??? example "Example: a product sells out"

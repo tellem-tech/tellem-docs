@@ -33,6 +33,8 @@ Buyers cannot see the uncategorized category, so assign products a category. A c
 !!! warning "Deleting a category removes its products from sale"
     Deleting a category also deletes its subcategories. Their products are archived and become uncategorized. To restore them for buyers, publish the products from the archive and assign a new category.
 
+    You cannot delete a category while it or its subcategories contain active [iiko products](iiko.md#import-products). For iiko products that are already archived, deleting the category preserves their state and makes them uncategorized.
+
 <span id="_3"></span>
 
 ## Create a product { #products }
@@ -72,5 +74,8 @@ If using carriers, enter the weight in grams. It affects [delivery calculations]
 Select rows and the required action under “Actions”. Check the whole selection before changing price, quantity, or category. When duplicating products, photos are copied only with “Product photos” enabled.
 
 A product used in an order cannot be deleted from the regular list; archive it instead. Archiving hides it regardless of stock. See [Inventory](inventory.md) for other ways to remove a product temporarily.
+
+For products linked to iiko, the [menu import](iiko.md#import-products) manages archiving and restoration. You cannot copy, delete, manually archive, restore, or merge these products or their groups. Remove them from a mixed selection before applying an action to regular products.
+
 
 In **Catalog → Archive**, “Publish” restores a product. Deletion from the archive is available if the product is not in an unfinished order.
