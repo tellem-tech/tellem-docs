@@ -75,7 +75,13 @@ With payment on receipt only, the table is empty: continue, and the cashier will
 
 Add responsible staff, stores, and channels using the [notification recipient guide](crm-notifications.md#seller-recipients). These are the same settings as **Settings → Notifications → iiko errors**.
 
-![Step 4: error recipient, channel, and stores](../../media/iiko-setup/notifications.png)
+??? example "Recipient channels and stores"
+
+    The shared recipient settings with demo data. The interface is in Russian.
+
+    <figure markdown="span">
+    [![Recipient settings: Telegram and email selected for the demo store.](../../media/iiko-setup/notifications.en.png){ width="1280" height="720" loading=lazy }](../../media/iiko-setup/notifications.en.png)
+    </figure>
 
 You can continue without recipients, but nobody will receive error messages.
 
