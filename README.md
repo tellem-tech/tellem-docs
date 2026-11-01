@@ -2,33 +2,26 @@
 
 Public documentation for store owners and customers: [Russian](https://docs.tellem.tech/) · [English](https://docs.tellem.tech/en/).
 
-See [AGENTS.md](AGENTS.md) for writing, translation, and public repository guidelines. [CLAUDE.md](CLAUDE.md) imports the same instructions for Claude. Keep these repository instructions in English; maintain user documentation in both Russian and English.
+See [AGENTS.md](AGENTS.md) for writing, translation, and public repository guidelines.
 
 ## Structure
 
 - [mkdocs.yml](mkdocs.yml) — MkDocs and Material settings, languages, navigation, and redirects.
 - [docs/](docs/) — Russian pages (`page.md`) and English translations (`page.en.md`); `docs/media/` contains shared images and GIFs.
 - [docs/legal/](docs/legal/) — current legal documents and their translations. Legacy `/legal/en/` URLs redirect to the corresponding `/en/legal/` pages.
-- [requirements.txt](requirements.txt) — site dependencies and allowed versions.
+- [requirements.txt](requirements.txt) — site dependencies.
 
 Russian pages keep their existing URLs; English pages are served under `/en/`. The language switcher opens the corresponding page. Update both translations together, using unsuffixed `.md` paths in internal links so the site keeps readers in their chosen language.
 
 ## Agent environment
 
-[Claude Code](https://code.claude.com/docs/en/skills), [Codex](https://developers.openai.com/codex/skills/), and [OpenCode](https://opencode.ai/docs/skills/) share [AGENTS.md](AGENTS.md) and the versioned skills in [.agents/skills/](.agents/skills/). No global skill installation or environment synchronization is required.
+[AGENTS.md](AGENTS.md) routes editing to [stop-slop](.agents/skills/stop-slop/SKILL.md) and completion checks to [verification-before-completion](.agents/skills/verification-before-completion/SKILL.md). [CLAUDE.md](CLAUDE.md) imports the same rules; `.claude/skills/` contains relative aliases to the canonical `.agents/skills/` directories. No global installation is required.
 
-Start a new agent session after pulling changes to these instructions or skills.
-
-- `stop-slop` supports concise editing without changing the documented meaning.
-- `verification-before-completion` requires evidence before reporting that work is ready.
-
-[CLAUDE.md](CLAUDE.md) imports the shared rules; `.claude/skills/` contains relative aliases to the canonical skill directories. Codex and OpenCode use `.agents/skills` directly. Agents must follow the skill routing in AGENTS.md even when automatic discovery is unavailable.
-
-Keep the [upstream revisions and license notices](.agents/skills/SOURCES.md) with the skills. After adding or updating a skill, update its Claude alias and run the checks below. CI checks skill metadata, local references, licenses, and alias targets; it cannot prove that a model followed prose instructions.
+Keep the [upstream sources and license notices](.agents/skills/SOURCES.md) with the skills. For a new skill, add its Claude alias and AGENTS.md entry. The tests below check metadata, local references, licenses, and aliases.
 
 ## Local development
 
-Use Python 3.12, matching CI, and an activated virtual environment. Browser event tests also require Node.js 18 or newer.
+Use the Python version from [CI](.github/workflows/mkdocs-deploy.yml) in an activated virtual environment. Browser event tests also require Node.js with the built-in test runner.
 
 ```sh
 python -m pip install -r requirements.txt
@@ -50,11 +43,15 @@ CI also checks that every page has a translation. Link preview cards are enabled
 
 ## Product screenshots and GIFs
 
-Tellem team members can use [Content Workshop](https://github.com/tellem-tech/tellem-workshop) to create product screenshots, GIFs and short videos for documentation and Telegram. A coding agent captures the real interface and prepares the material; you can edit its text in a local browser. The workshop repository requires team access. Its README covers setup and use.
+Use [Content Workshop](https://github.com/tellem-tech/tellem-workshop) to capture the real interface and prepare screenshots, GIFs, and short videos. Its README covers setup and use; team access is required.
 
-For `scripts/render-wordmark.mjs`, pass the current workshop checkout with `--workshop`. Use `--workshop ../tellem-content-workshop` while local directories keep their old names, then `--workshop ../tellem-workshop` after the directory rename.
+To rebuild the home-page wordmark, pass the workshop checkout and an ignored output directory:
 
-Update both language pages together, with matching actions and captions. Keep screenshots truthful; identify shared Russian UI in the English instructions. An English GIF can use `.en.gif` with translated explanations and the same recording. Check the built image URLs and contents: the localization plugin publishes `home-screen-editor.en.gif` as `/en/media/crm/home-screen-editor.gif`, while the Russian file uses `/media/crm/home-screen-editor.gif`. Shared home-page CSS loads from `/css/home.css` in both languages, so its relative logo URLs resolve under `/media/`.
+```sh
+node scripts/render-wordmark.mjs --workshop ../tellem-workshop --output site/wordmark-rebuild
+```
+
+Update both language pages with matching actions and captions. Identify shared Russian UI in English instructions. Name translated media `name.en.gif` or `name.en.png`: the localization plugin publishes it under `/en/media/` without the `.en` suffix. Check the built URLs and contents. Shared home-page CSS loads from `/css/home.css` in both languages, so its relative logo URLs resolve under `/media/`.
 
 ## Publication
 

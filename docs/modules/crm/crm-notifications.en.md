@@ -39,15 +39,15 @@ Set the payment deadline in the [payment method](payment-providers.md).
 ## Recipients { #seller-recipients }
 
 1. Under **Recipients**, click **Add** and select the staff member's account from the customer list. A Telegram account is not required.
-2. Choose a delivery method in **Send via**. Contact details come from the customer card.
+2. In **Send via**, choose one or more channels: **Telegram**, **VK**, **Email**. Contact details come from the customer card.
 3. Choose the **Stores** whose notifications the staff member needs. Without a selected store, messages will not arrive. Low stock notifications do not have this field.
 
-???+ example "Example: recipient of new order notifications"
+???+ example "Example: choosing notification channels"
 
     Example with demo data. The recording shows the Russian interface.
 
     <figure markdown="span">
-    [![Adding a staff member as a recipient of the New order event: the automatic channel and the demo store; the settings save at once.](../../media/crm/crm-staff-notifications.en.gif){ width="960" height="540" loading=lazy }](../../media/crm/crm-staff-notifications.en.gif)
+    [![Adding a staff member as a recipient of the New order event: selecting Telegram and email for the demo store; the settings save at once.](../../media/crm/crm-staff-notifications.en.gif){ width="960" height="540" loading=lazy }](../../media/crm/crm-staff-notifications.en.gif)
     </figure>
 
 On a computer, the fields appear in the recipient's row. On a phone, tap **Settings** next to the recipient,
@@ -57,18 +57,19 @@ To remove a recipient, click the trash icon in their row on a computer, or choos
 on a phone. Confirm removal. The staff member stops receiving messages only for the selected event;
 their settings for other events stay unchanged.
 
-| Send via | Result |
-|---|---|
-| Telegram | Only in Telegram |
-| VK | Only in private messages with the VK community |
-| Email | Only by email |
-| Telegram, VK and email | Every available channel |
-| Automatic | One available channel, preferring Telegram, then VK, then email |
-| Do not send | Pause messages for this recipient and keep their settings |
+Messages arrive through the selected available channels. For example, choose **Telegram** and **Email**
+to receive them through both. Select all three to receive messages through all channels.
+
+Choose **Automatic** to receive each message through one available channel, preferring Telegram,
+then VK, then email. This option replaces individual channels; choosing an individual channel
+turns off **Automatic**.
+
+To pause messages, clear **Send via**. The recipient, their stores, and previous channel settings
+stay saved. Choose the channels you need to resume delivery.
 
 On a computer, changes in the row save immediately. Telegram requires a linked account and an enabled [bot integration](../../getting-started/bot-setup.md). Email requires mail delivery to be configured on the platform. If a channel is unavailable, a warning appears below **Send via**.
 
-For VK, connect the [store community](vk.md). The staff member must link VK to their account and [allow community messages](../app/customer-notifications.md#vk). VK supports every event in the table above. Customer notification and mailing switches in the staff member's profile do not affect these messages.
+For VK, connect the [store community](vk.md). The staff member must link VK to their account and [allow community messages](../app/customer-notifications.md#vk). Messages arrive in their private conversation with the community. VK supports every event in the table above. Customer notification and mailing switches in the staff member's profile do not affect these messages.
 
 With **Automatic**, the CRM chooses an available channel before sending. If delivery fails in the chosen channel, the CRM does not redirect the message to another.
 
@@ -78,7 +79,7 @@ With **Automatic**, the CRM chooses an available channel before sending. If deli
 
 Choose **Daily digest**, **Weekly digest**, or **Monthly digest** and add recipients.
 Set the channels and stores for each digest separately. To pause one digest for
-an employee, select **Do not send** in that recipient's settings.
+an employee, clear **Send via** in that recipient's settings.
 
 The CRM sends digests at 09:00 CRM time: yesterday's report every day, the previous
 calendar week on Mondays, and the previous calendar month on the first day.

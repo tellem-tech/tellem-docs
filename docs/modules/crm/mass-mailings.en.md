@@ -142,9 +142,9 @@ a saved audience and campaigns with unconfirmed sending may have no result.
 
 **“Write with AI”** appears when the [AI integration](integrations.md#ai) is enabled and has an API key. First select the campaign audience and location.
 
-Select a purpose or **“Choose automatically”** to let AI suggest a purpose from all selected segment conditions. Add optional wishes of up to 1,000 characters and click **“Generate”**. Review the suggestion, then click **“Apply”**. The campaign purpose and text stay unchanged until you apply; AI does not change the audience or location. You can cancel the request or generate another version. For VK, AI drafts plain text.
+Select a purpose or **“Choose automatically”** to let AI suggest a purpose from all selected segment conditions. Add optional wishes of up to 1,000 characters and click **“Generate”**. Review the message and the **“Why this message”** explanation, then click **“Apply”**. The campaign purpose and text stay unchanged until you apply; AI does not change the audience or location. You can cancel the request or generate another version. For VK, AI drafts plain text.
 
-AI uses segment conditions, stores, catalog information, popular products, active promotions, and promo codes, including their codes. The recipient list is not included. Before applying, check prices, conditions, and codes against CRM.
+AI uses segment conditions, stores, catalog information, popular products, active promotions, and promo codes, including their codes. AI also considers daily segment history and past campaigns with the same location, purpose, channel, and observation window. The explanation describes facts, comparison limits, and a hypothesis for the new mailing. If history is missing or limited, AI still proposes a message and explains what is unknown. The recipient list is not included. Before applying, check prices, conditions, and codes against CRM.
 
 ## Customer history { #customer-history }
 

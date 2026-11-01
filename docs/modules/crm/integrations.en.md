@@ -22,9 +22,20 @@ Disabling Telegram or VK stops messages to that channel and hides its switch in 
 
 1. In **Integrations → AI**, enable **AI integration**, choose a model, and paste an API key from your OpenAI account. Keep the key secret.
 2. Click **Check connection**. Settings save immediately.
-3. Reload the page: **AI chats**, marked with a magic wand, appears in the CRM header. **Create with AI** becomes available in mailings.
+3. Reload the page: **AI chats**, marked with a magic wand, appears in the CRM header. **Write with AI** becomes available in mailings.
 
 Review responses before using them. Chats are deleted after two weeks.
+
+
+In **AI chats**, store owners can ask which audience to contact, how segment sizes changed over a period,
+or how past campaigns compare. Specify a location and dates, for example:
+“Compare last month’s campaigns for this location and suggest a mailing for loyal customers.”
+The assistant gives advice and can estimate an eligible audience after consent, channel, and frequency checks.
+Create campaigns and segments yourself in [Mailings](mass-mailings.md).
+
+Check the location, period, and calculation dates in the answer. Missing history means insufficient data.
+Changes in segment sizes do not show which customers moved between segments. Purchases by a campaign
+ audience alone do not prove that the mailing caused them or paid for itself.
 
 ## Custom { #пользовательские }
 
