@@ -11,7 +11,9 @@ description: "Check payment and order contents, allocate products, manage status
 
 Find an order, check its payment and products, then move it through its statuses.
 
-Open **Orders**. Search by order number, or select a status and fulfillment method in **Filter**. Collapsing the filter keeps the selected conditions; on a computer, you can also use column header filters.
+Open **Orders**. Search by order number, or select a status, store, and fulfillment method in **Filter**. Collapsing the filter keeps the selected conditions; on a computer, you can also use column header filters.
+
+If there is only one store, the CRM selects it and hides the field. Opening Orders from a digest applies the store filter from the link.
 
 On a phone, browse the compact list: each row shows the customer, status, total, fulfillment, and payment method. Open a row to view details: on a wide screen, they appear in a panel on the right over the table, keeping the table's width; on a small screen, the “Order details” panel fills the screen. To export to Excel on a phone, open **Actions**.
 

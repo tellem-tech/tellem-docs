@@ -6,7 +6,7 @@ description: "Configure Tellem employee notifications: recipients, stores, chann
 
 # Notifications { #notifications }
 
-Configure order and stock messages for staff, and add text to customer notifications.
+Configure staff messages about orders, stock, and store performance, and add text to customer notifications.
 
 Open **Settings → Notifications**. On the **Staff** tab, choose an **Event**. On the **Customers** tab,
 customize order status messages.
@@ -25,6 +25,10 @@ customize order status messages.
 | Overdue payment | An unpaid order is canceled or enters **Payment error** because the deadline expired or payment was declined |
 | Unread orders | At the configured interval while **New** orders remain; **Repeat after** sets the interval in minutes |
 | iiko errors | An order, status update, or stop list could not be transferred; the message includes [next steps](iiko-errors.md) |
+| Daily digest | Every day at 09:00 CRM time, reporting yesterday |
+| Weekly digest | Mondays at 09:00 CRM time, reporting the previous calendar week |
+| Monthly digest | The first day at 09:00 CRM time, reporting the previous calendar month |
+
 
 Set the payment deadline in the [payment method](payment-providers.md).
 
@@ -69,6 +73,41 @@ For VK, connect the [store community](vk.md). The staff member must link VK to t
 With **Automatic**, the CRM chooses an available channel before sending. If delivery fails in the chosen channel, the CRM does not redirect the message to another.
 
 **iiko errors** is available while at least one iiko connection is saved. It shares recipients with the connection wizard's **Notifications** step. Without recipients, nobody receives a message; if the affected venue is unknown, the selected staff with delivery enabled receive it.
+
+## Manager digests { #store-digests }
+
+Choose **Daily digest**, **Weekly digest**, or **Monthly digest** and add recipients.
+Set the channels and stores for each digest separately. To pause one digest for
+an employee, select **Do not send** in that recipient's settings.
+
+The CRM sends digests at 09:00 CRM time: yesterday's report every day, the previous
+calendar week on Mondays, and the previous calendar month on the first day.
+**Next delivery** shows the date and time in your own time zone.
+
+When you select several stores, the message contains a separate block for each.
+Each block shows revenue from returning customers, total revenue, completed orders,
+average order value, and new buyers. Changes compare the preceding day, week,
+or month. The report period appears below the heading. A zero comparison base
+has no percentage increase. Comparing shares requires at least 30 buyers.
+
+A buyer is new when they make their first completed purchase across the network.
+Cancellations, returns, and payment errors do not count towards revenue.
+See [analytics](analytics.md) for metric definitions.
+
+The **At risk** and **Need attention** counts come from the latest completed RFM
+calculation. Changes compare these counts with
+saved daily counts from the previous send date. Until that history is available,
+you see current counts without a delta. In **Orders to review**, unprocessed orders
+refer to the current moment; payment errors and cancellations refer to the report period.
+
+**Analytics**, **Store RFM**, and **Orders** open the selected store's details in
+the CRM after normal sign-in. The email chart shows total revenue and the contribution
+from returning customers. Segment cards explain who is in each group and how you
+can respond.
+
+In Telegram, the digest has **Revenue**, **Customers and orders**, and **Needs attention**
+sections, with tables of values and changes, segment explanations, and buttons
+to open the CRM. VK provides a text version with values, changes, and links.
 
 <span id="for-customers"></span>
 
