@@ -1,6 +1,6 @@
 # Skill sources
 
-These skills are adapted from the upstream revisions below. The local copies keep concise editing and verification rules for this repository; they are not byte-for-byte mirrors. Preserve the license notices when updating them. Repository content rules live in [AGENTS.md](../../AGENTS.md).
+These skills are vendored at fixed upstream revisions. Keep their files and license notices together; project-specific guidance belongs in [AGENTS.md](../../AGENTS.md).
 
 | Skill                                                                     | Upstream revision                                                                                                                                                                            | License                                                                         |
 |---------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|
