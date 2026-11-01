@@ -40,7 +40,7 @@ Inactive guests have no completed orders in the 90 days ending at the selected p
 
 ## Sales by day and time { #sales-by-time }
 
-In **Analytics → Overview**, choose a period and locations. Use **Breakdown** in the revenue card:
+In **Analytics → Overview**, choose a period and locations. Above the revenue total, select:
 
 - **Over time**: totals by date, week or month, depending on the length of the period.
 - **By weekday**: totals for Mondays, Tuesdays and the other weekdays within the selected period.
