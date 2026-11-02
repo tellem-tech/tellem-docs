@@ -45,10 +45,6 @@ When you open the portrait from an analytics list, CRM keeps the report's locati
 
 Above the tabs, review the RFM segment, completed purchases over all time, their total, and days without a purchase. The entire summary uses the segment color from [Analytics](analytics.md#rfm). With no purchases, the record explains this instead of showing zero metrics. Select a “Sales area” in the summary to review that location.
 
-[![Choose a location and review purchase rhythm, orders, and campaign history in a customer record](../../media/crm/client-profile-campaigns.gif){ loading=lazy width=720 height=900 }](../../media/crm/client-profile-campaigns.gif)
-
-*The shared GIF shows Russian interface labels and captions.*
-
 Contacts and addresses are read-only: the buyer changes them in their [application profile](../app/account.md). On the “Permissions” tab, you can disable delivery or pickup orders. Buyers then stop seeing all methods of that type, including carriers. “Online” and “In establishment” remain available; the catalog-viewing permission has no effect on access.
 
 “[username unavailable]” in the Telegram contact means the buyer has linked Telegram, but the username is unavailable. This label does not indicate whether they receive bot messages. A dash means Telegram is not linked.
@@ -66,6 +62,14 @@ Day, time, product, and fulfillment preferences appear when the purchase history
 Select a location in the summary and open **“Campaigns”**. Select a row and click **“Open campaign”** to review the original settings and message.
 
 The history shows membership in the audience at launch. Opt-outs, new orders, and segment changes do not alter it; membership does not confirm delivery or reading. See [Campaigns and mailings](mass-mailings.md) for launch and repeat rules.
+
+??? example "Example: a customer's campaign history"
+
+    Example with demo data. The recording shows the Russian interface.
+
+    <figure markdown="span">
+    [![Selecting a location in a customer record, reviewing purchase rhythm and orders, and opening the original campaign from the Campaigns tab.](../../media/crm/client-profile-campaigns.en.gif){ width="960" height="540" loading=lazy }](../../media/crm/client-profile-campaigns.en.gif)
+    </figure>
 
 ### Points { #bonuses }
 

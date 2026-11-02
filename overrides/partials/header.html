@@ -58,6 +58,7 @@ IN THE SOFTWARE.
     {% set is_english = config.theme.language == "en" %}
     {% set support_label = 'Support on Telegram (opens in a new tab)' if is_english else 'Поддержка в Telegram (в новой вкладке)' %}
     {% set website_label = 'Tellem website (opens in a new tab)' if is_english else 'Сайт Tellem (в новой вкладке)' %}
+    {% set account_label = 'Tellem account (opens in a new tab)' if is_english else 'Личный кабинет Tellem (в новой вкладке)' %}
     <div class="tellem-header-links">
       <a href="https://t.me/tellem_tech_bot" target="_blank" rel="noopener" class="md-header__button md-icon tellem-header-link" title="{{ support_label }}" aria-label="{{ support_label }}">
         {% include ".icons/material/lifebuoy.svg" %}
@@ -65,7 +66,11 @@ IN THE SOFTWARE.
       </a>
       <a href="https://tellem.tech" target="_blank" rel="noopener" class="md-header__button md-icon tellem-header-link" title="{{ website_label }}" aria-label="{{ website_label }}">
         {% include ".icons/material/web.svg" %}
-        <span>tellem.tech</span>
+        <span>{{ 'Site' if is_english else 'Сайт' }}</span>
+      </a>
+      <a href="https://tellem.tech/lk" target="_blank" rel="noopener" class="md-header__button md-icon tellem-header-link" title="{{ account_label }}" aria-label="{{ account_label }}">
+        {% include ".icons/material/account-circle-outline.svg" %}
+        <span>{{ 'Account' if is_english else 'Кабинет' }}</span>
       </a>
     </div>
     {% if config.theme.palette %}

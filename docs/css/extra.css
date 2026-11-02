@@ -130,6 +130,15 @@
   }
 }
 
+@media screen and (max-width: 23.4375em) {
+  .md-header__inner .md-header__button { margin-inline: 0; }
+  .md-header__title { margin-inline: .2rem; }
+}
+
+@media screen and (max-width: 29.984375em) {
+  .md-header__title { visibility: hidden; }
+}
+
 @media screen and (min-width: 76.25em) {
   .md-header__topic {
     display: none;
