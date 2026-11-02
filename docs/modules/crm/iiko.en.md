@@ -118,12 +118,12 @@ For one item, open **Catalog → Products → Create → Add from iiko** and cho
 
 ### Add or update a restaurant menu { #import-products }
 
-After you save the connection, CRM updates the configured restaurants' menus once an hour without an open window. To update a menu immediately, run a full import using the steps below. View manual and hourly update results under **Integrations → iiko → Operation history**.
+After you save the connection, CRM updates the configured restaurants' menus once an hour and when iiko sends a menu change event. No open window is required. If events are not connected or are missed, hourly updates continue. To start an update manually, follow the steps below. View the results under **Integrations → iiko → Operation history**.
 
 Open an import's **Details** in history to see created and changed menu items, automatic archiving and restoration, reasons, and links to products. Totals cover the entire menu. If there are too many diagnostic rows, the report shows how many were omitted; all created and changed menu items are retained.
 
 !!! warning "Import enables product visibility"
-    A full import, including an hourly update, makes new products with positive stock available to customers immediately. Repeating the import enables **Show in catalog** for previously hidden cards too; sale status under **Inventory** is preserved. Publish a menu in iiko when it is ready for sale. Manually edited names, descriptions, categories, and prices apply until the next full import.
+    A full import, including an automatic update, makes new products with positive stock available to customers immediately. Repeating the import enables **Show in catalog** for previously hidden cards too; sale status under **Inventory** is preserved. Publish a menu in iiko when it is ready for sale. Manually edited names, descriptions, categories, and prices apply until the next full import.
 
 1. In **Integrations → iiko**, find the restaurant on the connection card and click **Import products** in its row.
 2. Choose **Entire menu**. The selected restaurant's import starts when the results window opens; there is no separate start action.
@@ -135,11 +135,11 @@ Confirmed deletion of a dish or size removes it from the selected restaurant's a
 
 If a card is used by different iiko sources or CRM cannot confirm its previous import source, the report shows a conflict. CRM keeps the previous data instead of deleting or overwriting the shared card. Check restaurant bindings before repeating the import.
 
-Importing updates stock for products added from the menu separately for each terminal. A positive iiko limit becomes the CRM quantity without its fractional part, a stop gives zero, and no limit gives a nominal quantity. A nominal quantity does not confirm the physical number of portions. Size stock is tracked separately. The next successful full import, manual or hourly, replaces the quantity, including any manually entered value; it does not add to the previous quantity. Previously linked products keep their manually managed stock.
+Importing updates stock for products added from the menu separately for each terminal. A positive iiko limit becomes the CRM quantity without its fractional part, a stop gives zero, and no limit gives a nominal quantity. A nominal quantity does not confirm the physical number of portions. Size stock is tracked separately. The next successful full import — manual, hourly, or triggered by an iiko event — replaces the quantity, including any manually entered value; it does not add to the previous quantity. Previously linked products keep their manually managed stock.
 
 If a stock warning appears, CRM saves product cards but creates no new inventory and preserves previous quantities for affected terminals. Repeat the import after the connection recovers or wait for the next hourly update. A photo error does not prevent saving the product. A menu retrieval error or an empty response does not clear the catalog.
 
-Closing the window stops the import started from that window while preserving completed work. An independent hourly update continues running. Running the import again adds the remainder without duplicates. The summary shows processed sizes and extras; after a stop or errors, review the unprocessed part.
+Closing the window stops the import started from that window while preserving completed work. An independent automatic update continues running. Running the import again adds the remainder without duplicates. The summary shows processed sizes and extras; after a stop or errors, review the unprocessed part.
 
 ### Link existing products { #link-existing-products }
 
@@ -153,7 +153,7 @@ Linking preserves product cards, prices, photos, stock, and history; no new prod
 
 A full import creates dish sizes as product variants with their own prices and stock. Change the size selection in iiko: after the next full import, removed sizes become unavailable, while returning sizes keep their existing cards. You cannot create or delete these variants manually in CRM.
 
-In the product card's **Modifiers** section, check extras, groups, required choices, limits, and free quantities. This section shows data from the last full import. Change it in iiko, then import the menu manually or wait for the hourly update. Customers cannot order a linked dish before the first full import. Extras do not create separate catalog products.
+In the product card's **Modifiers** section, check extras, groups, required choices, limits, and free quantities. This section shows data from the last full import. Change it in iiko; CRM receives the changes during a [menu update](#import-products). Customers cannot order a linked dish before the first full import. Extras do not create separate catalog products.
 
 Customers choose sizes and extras in the [product card and cart](../app/ui-and-pages.md#product-card). CRM orders show the selected size, extras, and their quantities. Promotions and birthday discounts reduce the dish or selected size price; extras are added without that discount.
 

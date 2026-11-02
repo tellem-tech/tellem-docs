@@ -67,4 +67,4 @@ Changing quantity or sale availability leaves an “Out of stock” label when �
     [![The iced cappuccino quantity is set to 0 and the app shows it as out of stock; after “Assortment with zero quantity” is turned off the product is gone from the catalog; after entering 10 it is back with the add button.](../../media/crm/crm-stop-sale-effect.en.gif){ width="960" height="540" loading=lazy }](../../media/crm/crm-stop-sale-effect.en.gif)
     </figure>
 
-The [iiko](iiko.md) stop list limits availability separately from manually entered stock. [Importing an iiko menu](iiko.md#import-products) also sets stock for imported products; importing again replaces it with the current quantity from iiko.
+The [iiko](iiko.md) stop list limits availability separately from manually entered stock. For products added from the menu, a manually entered quantity applies until the next successful [full iiko menu update](iiko.md#import-products).
