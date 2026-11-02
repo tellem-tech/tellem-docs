@@ -14,7 +14,7 @@ If the store shows **18+ content**, continue only after confirming **I am 18 or 
 
 ## Home screen { #home-screen }
 
-Tap the name and address in the header to choose a store or store chain (sales area). The catalog and stock depend on your choice. A guest opening a store-specific link or QR code goes to that store's catalog.
+Choose a store or store chain (sales area) on the home screen. On a phone, tap the name and address in the header; on a computer, use the sales area selector above the banners when several areas are available. The catalog and stock depend on your choice. A guest opening a store-specific link or QR code goes to that store's catalog.
 
 ??? example "Example: choosing a sales area"
 
@@ -26,9 +26,11 @@ Tap the name and address in the header to choose a store or store chain (sales a
 
 Open **Catalog** to choose products, **Favorites** for saved items, or **Previously ordered** to find past purchases. Home screen blocks and warnings depend on store settings; the store warning appears only after sign-in.
 
-Search is at the bottom. The cart button appears when it contains products and shows their quantity and amount.
+On a computer, search, **Catalog**, **Favorites**, **Profile**, and **Cart** are in the top bar. On a phone, search is at the bottom; the cart button appears when it contains products and shows their quantity and amount.
 
-??? example "Example: the home screen with a cart"
+On a computer, wide banners appear to the right of the top banners. If there are several wide banners, use the small arrows or dots below the image to switch between them. A banner with a collection opens it when clicked. If there are no top banners, wide banners stay in their configured positions in the home feed.
+
+??? example "Example: the compact home screen with a cart"
 
     Example with demo data. The image shows the Russian interface.
 
@@ -40,13 +42,19 @@ Search is at the bottom. The cart button appears when it contains products and s
 
 ## Catalog and search { #catalog-and-search }
 
-Choose a category or enter a search query; product and category results appear as you type. If there are no matches, change the query or check the selected sales area.
+Category cards are at the bottom of the home screen. **Catalog** opens a separate screen with the list of categories. Open the one you need: subcategories appear first, followed by products assigned directly to that category. Open nested categories in the same way.
+
+Use **Back** to return to the previous screen, or the path above the list to return to a parent category you opened earlier. If the path is collapsed, expand **Full path** or **…**.
+
+**More categories** loads the next part of the subcategory list. Products load as you scroll down; you can also use **Load more**.
+
+Enter a search query; product and category results appear as you type. In the computer's top bar, submit the query with Enter or the search button to open the results. If there are no matches, change the query or check the selected sales area.
 
 <span id="_4"></span>
 
 ## Product card { #product-card }
 
-Check the description, specifications, price, and availability. If the product has variants, such as size or color, choose one before adding it. Tap a photo to open it full screen or the SKU, the product's code, to copy the code.
+Check the description, specifications, price, and availability. If the product has variants, such as size or color, choose one before adding it. Tap a photo to open it full screen or the SKU, the product's code, to copy the code. If there are several photos, use the arrows or dots below the photo to switch between them. The full-screen gallery also supports the ← and → keys; Escape closes it.
 
 ??? example "Example: product variants in the card"
 

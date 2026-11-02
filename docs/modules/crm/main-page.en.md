@@ -19,7 +19,7 @@ Where: **Catalog → Design**.
 1. Open “Main page” and select a store for the preview if there are several.
 2. Click “Add a section” and choose a product collection, category collection, or banner. For a regular promotion, use “Upper sales banner”; a [personal birthday discount](promo-codes.md#birthday) cannot be added to it.
 3. Select the chains where the block should appear in “Stores”. You can then add products from their assortments. Enter a name and content; also add an image for a banner.
-4. Under “Content and order”, reorder blocks with the arrows. Top banners stay first and the catalog of top-level categories stays last. The arrows do not reorder items within the top banner.
+4. Under “Content and order”, reorder blocks with the arrows. Top banners stay first and the catalog of top-level categories stays last. On a computer, when top banners are present, all wide feed banners appear [to their right](../app/ui-and-pages.md#home-screen). The arrows do not reorder items within the top banner.
 5. Check the result in the phone preview. The pencil opens a block's settings; × deletes it after confirmation.
 
 ???+ example "Example: product collections"
@@ -32,7 +32,7 @@ Where: **Catalog → Design**.
 
 Without a name, a block is visible in the preview but hidden from buyers. A top promotion banner takes its name from the promotion. With the [multilingual editor](general-settings.md) enabled, enter a name for each language.
 
-Images have a 10 MB limit. Recommended proportions are 2:3 for top banners, for example 600×900, and 2:1 for feed banners, for example 1200×600. Small GIF files load faster.
+Images have a 10 MB limit. Recommended proportions are 2:3 for top banners, for example 600×900, and 2:1 for feed banners, for example 1200×600. The same image is used on phones and computers; no separate version is needed. The banner keeps its proportions and is shown in full. Small GIF files load faster.
 
 <span id="_3"></span>
 

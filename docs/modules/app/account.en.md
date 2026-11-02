@@ -114,6 +114,8 @@ Open **Active sessions** to check which devices are signed in. After confirmatio
 
 The installed app appears on your home screen and opens in a separate window. Select **Install app** in your profile; sign-in is not required.
 
+Close the installation offer on the home screen with × or swipe it away. It will not appear again in that browser; installation through the profile remains available while the browser offers it.
+
 ??? example "Example: “Install app” in the profile"
 
     Example with demo data. The image shows the Russian interface.
