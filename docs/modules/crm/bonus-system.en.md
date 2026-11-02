@@ -73,6 +73,14 @@ Missed birthdays are not compensated automatically. In **Clients → customer re
 
 Compensation is available for a saved customer for the most recent birthday, including one in the previous calendar year. The date must have been provided in advance, birthday points enabled, and a Tellem account already created. Confirming again does not award a second gift for the same year.
 
+??? example "Example: compensating birthday points"
+
+    Example with demo data: a gift of 250 points. The recording shows the Russian interface.
+
+    <figure markdown="span">
+    [![Compensating for a missed gift in a customer record: confirming the award and checking the balance of 250 points. Confirming again leaves the balance unchanged.](../../media/crm/crm-birthday-compensation.en.gif){ width="960" height="540" loading=lazy }](../../media/crm/crm-birthday-compensation.en.gif)
+    </figure>
+
 <span id="expiry-and-reminders"></span>
 
 <span id="_6"></span>

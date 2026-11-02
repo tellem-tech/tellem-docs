@@ -96,7 +96,15 @@ A notification channel disabled in either account stays disabled if at least one
 
 ## Addresses and bonus points { #addresses-and-bonus-points }
 
-Save an address under **Delivery addresses** to select it at [checkout](checkout.md).
+Open **Profile → Delivery addresses → Add address**. Enter a name, fill in the address, and tap **Save**. You can select the saved address at [checkout](checkout.md).
+
+??? example "Example: saving a delivery address"
+
+    Example with demo data. The recording shows the Russian interface.
+
+    <figure markdown="span">
+    [![Adding a demo address: entering the country, region, city, street, and house number, saving, and checking the new card in the address list.](../../media/app/app-delivery-address.en.gif){ width="960" height="540" loading=lazy }](../../media/app/app-delivery-address.en.gif)
+    </figure>
 
 If the store has enabled its bonus program and you do not have a bonus account yet, **Join the bonus program** opens after sign-in. Check or enter your phone number in +7 format and tap **Register**. The number is saved to your profile; you cannot use another customer's number. You can close the window with the close icon and return to registration through **Connect bonus system** in your profile.
 

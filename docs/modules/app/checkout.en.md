@@ -93,6 +93,14 @@ For another recipient, leave **Save for future orders** disabled. Existing profi
 
 Under **Bonuses**, choose **Spend** to use points from your [connected bonus account](account.md). Checkout shows the permitted amount: 1 point equals 1 unit of the store currency, and points cannot cover delivery. Purchase points are awarded after the order is completed.
 
+??? example "Example: spending points at checkout"
+
+    Example with demo data; no order is placed. The recording shows the Russian interface.
+
+    <figure markdown="span">
+    [![Selecting Spend under Bonuses: 100 points reduce the total from 350 to 250 RUB. Disabling points restores the total to 350 RUB.](../../media/app/app-bonus-redeem.en.gif){ width="960" height="540" loading=lazy }](../../media/app/app-bonus-redeem.en.gif)
+    </figure>
+
 Check discounts, delivery, and the total in the cost details. Delivery to an address appears separately, including free delivery; other fulfillment methods show this row when their cost is above zero.
 
 <span id="_7"></span>

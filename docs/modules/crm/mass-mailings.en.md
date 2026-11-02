@@ -50,10 +50,10 @@ CRM fixes the audience membership at launch. Later segment changes and new order
 
 ??? example "Example: create a campaign"
 
-    Demo data: standard and saved segments, text, preview, and scheduling. The shared GIF shows Russian interface labels and captions.
+    Demo data: RFM segment selection, text, preview, and scheduling. The recording shows the Russian interface.
 
     <figure markdown="span">
-    [![Create a campaign: segments, text, preview, date, and scheduling confirmation](../../media/crm/campaign-creation.gif){ width=720 height=900 loading=lazy }](../../media/crm/campaign-creation.gif)
+    [![Creating a campaign: RFM segment selection, text, preview, date, and scheduling confirmation.](../../media/crm/campaign-creation.en.gif){ width="960" height="540" loading=lazy }](../../media/crm/campaign-creation.en.gif)
     </figure>
 
 Under **“Formatting”**, choose Markdown or HTML and open the help. The text limit is 4,000 characters, or 9,000 for VK. VK receives plain text and links. The form checks formatting before saving; correct any errors it reports.
