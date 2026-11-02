@@ -120,6 +120,8 @@ For one item, open **Catalog → Products → Create → Add from iiko** and cho
 
 After you save the connection, CRM updates the configured restaurants' menus once an hour without an open window. To update a menu immediately, run a full import using the steps below. View manual and hourly update results under **Integrations → iiko → Operation history**.
 
+Open an import's **Details** in history to see created and changed menu items, automatic archiving and restoration, reasons, and links to products. Totals cover the entire menu. If there are too many diagnostic rows, the report shows how many were omitted; all created and changed menu items are retained.
+
 !!! warning "Import enables product visibility"
     A full import, including an hourly update, makes new products with positive stock available to customers immediately. Repeating the import enables **Show in catalog** for previously hidden cards too; sale status under **Inventory** is preserved. Publish a menu in iiko when it is ready for sale. Manually edited names, descriptions, categories, and prices apply until the next full import.
 
