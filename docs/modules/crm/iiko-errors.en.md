@@ -53,6 +53,8 @@ If CRM asks you to import modifiers or update sizes, run a [full restaurant menu
 
 Under **Catalog → Products**, check [sizes and the Modifiers section](iiko.md#sizes-and-extras). If a required extra cannot be selected, ask the person responsible for the menu to check its availability, price, and limits in iiko, then repeat the import. The customer must review their size and extras in the cart again. Until the issue is resolved, [remove the unavailable dish from sale](inventory.md).
 
+If the import report shows conflicting data for one modifier, CRM keeps the previous data and does not apply the menu. Give the modifier identifier (UUID) from the conflict row to the person responsible for the menu. Ask them to compare and align the source nomenclature with the same modifier in the iikoOffice menu export, then publish the corrected menu. After that, repeat the [full import](iiko.md#import-products).
+
 ## Connection, organization, or terminal is not configured { #terminal }
 
 CRM cannot determine which checkout group should receive the order.
