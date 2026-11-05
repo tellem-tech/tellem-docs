@@ -8,11 +8,13 @@ description: "Investigate iiko errors in Tellem: orders at the till, access, ter
 
 # iiko errors: a manager's guide { #iiko-errors }
 
-An **iiko errors** notification reports an unsuccessful order transfer, status update, or stop list update. Find its cause in this guide and check the result after correcting it.
+An **iiko errors** notification reports an unsuccessful order transfer or a failed status, menu, or stop list update. Find its cause in this guide and check the result after correcting it.
 
 The screenshots show a demonstration CRM in Russian with fictional names. In your CRM, select the venue and connection from the notification.
 
 ## Check the order first { #first-check }
+
+This check applies to order transfer or processing errors. For a menu or stop list update error, go to its cause below; the notification may have no order number.
 
 1. Under **Orders**, find the notification's order number. Check the venue, items, fulfillment method, and payment.
 2. Ask the cashier to find it in iiko. Compare time, items, and total: the checkout number may differ from the CRM number.
@@ -26,7 +28,7 @@ The screenshots show a demonstration CRM in Russian with fictional names. In you
 
 Open **Integrations → iiko**, find the card by the notification's connection name or **Connected venues**, and click **Configure**.
 
-Use **Next** through credentials, terminals, payments, notifications, and stop list. After changes, continue to the end and click **OK**. Closing the window does not save changes.
+Use **Next** through **Connection**, **Venue connections**, **Payments**, and **Notifications**. After changes, continue to the end and click **Save**. Closing the window does not save changes. Stop lists open separately through **Actions → Stop lists** on the connection card.
 
 ![Connection card with configuration and operation history](../../media/iiko-errors/integrations.jpg)
 
@@ -53,29 +55,25 @@ If CRM asks you to import modifiers or update sizes, run a [full restaurant menu
 
 Under **Catalog → Products**, check [sizes and the Modifiers section](iiko.md#sizes-and-extras). If a required extra cannot be selected, ask the person responsible for the menu to check its availability, price, and limits in iiko, then repeat the import. The customer must review their size and extras in the cart again. Until the issue is resolved, [remove the unavailable dish from sale](inventory.md).
 
-If the import report shows conflicting data for one modifier, CRM keeps the previous data and does not apply the menu. Give the modifier identifier (UUID) from the conflict row to the person responsible for the menu. Ask them to compare and align the source nomenclature with the same modifier in the iikoOffice menu export, then publish the corrected menu. After that, repeat the [full import](iiko.md#import-products).
+If the import report shows conflicting data for one modifier, CRM keeps the previous data and does not apply the menu. Give the modifier identifier (UUID) from the conflict row to the person responsible for the menu. Ask them to compare the modifier definition and its placements in the selected external menu in iikoWeb, align the data, and publish the corrected menu. After that, repeat the [full import](iiko.md#import-products).
 
 ## Connection, organization, or terminal is not configured { #terminal }
 
 CRM cannot determine which checkout group should receive the order.
 
 1. [Open the connection](#open-configuration). If none exists, [connect iiko](iiko.md#_1) with the person responsible for the restaurant; do not use another venue's credentials.
-2. Under **iiko terminals**, find the store in **Sales area**. Choose its organization and checkout group. See [terms and mapping limits](iiko.md#terms).
+2. Under **Venue connections**, find the store in **Order destinations**. Select the **iiko organization** and **iiko terminal**. See [terms and mapping limits](iiko.md#terms).
 3. If the required value is missing, [check access](#connection). Do not choose an arbitrary group to pass the step.
 4. Save the connection and check a test order at the correct venue's checkout.
-
-![Store mapping to an organization and terminal](../../media/iiko-errors/terminals.jpg)
 
 ## A payment method is not mapped { #payment }
 
 The order's payment method has no selected iiko payment type. This does not mean the customer's payment failed.
 
 1. Check the payment method and payment status in the order.
-2. [Open the connection](#open-configuration) and continue to **Payment method settings**. Select the row for the required store and method.
-3. Set **Payment type from iiko** as agreed with the cashier. Confirm **Processed externally** and **Fiscalized externally** with the person responsible for the checkout using the [payment and receipt process](iiko.md#payments).
+2. [Open the connection](#open-configuration) and continue to **Payments**. Find the required store and payment method.
+3. Select the **iiko payment method** agreed with the cashier. Confirm **Payment processed outside iiko** and **Receipt issued outside iiko** with the person responsible for the checkout using the [payment and receipt process](iiko.md#payments).
 4. If the required type is missing, ask the iiko administrator to check its availability. Save changes and verify the test order's payment in iiko.
-
-![Mapping CRM payment methods to iiko](../../media/iiko-errors/payments.jpg)
 
 Before further processing of the current order, [check its checkout record and payment](#first-check).
 
@@ -96,7 +94,7 @@ Possible causes include an incorrect terminal, an old QR code, a deleted table, 
 
 The connection sends only **In establishment** and **Pickup** orders. If a notification reports an unsupported fulfillment method, agree on processing with the shift manager. Do not change it without the customer's agreement. For future orders, [check the store's methods](stores-and-delivery.md). Adding delivery in iiko does not enable its transfer from Tellem.
 
-For a supported method, check the organization on the [terminal step](iiko.md#terminals). Ask the iiko administrator to enable an order type with the required service mode and grant the connection access to it. Renaming the type alone is insufficient. Reload connection data, then check a test order.
+For a supported method, check the organization on the [Venue connections step](iiko.md#terminals). Ask the iiko administrator to enable an order type with the required service mode and grant the connection access to it. Renaming the type alone is insufficient. Reload connection data, then check a test order.
 
 <span id="iiko-does-not-respond"></span>
 
@@ -138,7 +136,7 @@ The request may have been accepted before processing failed.
 Delayed updates may leave the CRM order status or stop list different from the checkout.
 
 1. Confirm the actual order status with the cashier.
-2. On the [last connection step](iiko.md#setup-stop-list), check the successful update time. **Hourly** mode means instant stop list updates are not connected.
+2. Open the [connection's stop lists](iiko.md#setup-stop-list) and check the successful update time. **Hourly** mode means instant stop list updates are not connected.
 3. If the failure repeats, [find the record and ask for help](#history). Until recovery, compare orders with the checkout and [update the stop list manually](#stop-list).
 
 ## The stop list did not update or availability could not be checked { #stop-list }
@@ -146,12 +144,10 @@ Delayed updates may leave the CRM order status or stop list different from the c
 A failure to retrieve availability differs from a sold-out dish message: a sale restriction is not itself a connection failure.
 
 1. Ask the cashier which dishes are unavailable. Until recovery, do not rely only on old CRM data.
-2. On the [last connection step](iiko.md#setup-stop-list), find the required terminal and successful update time.
-3. Click **Update now** once. Reopen the connection to see the result: the request does not complete immediately.
+2. In the [connection's stop lists](iiko.md#setup-stop-list), find the required venue and successful update time.
+3. Click **Refresh now** once. Reopen stop lists to see the result: the request does not complete immediately.
 4. Check the new successful update time and confirm the list matches the checkout. If it fails again, [check access](#connection) and [ask for help](#history).
 5. Repeat the pre-order availability check after recovery; do not order a dish known to be unavailable.
-
-![Stop list status and manual update](../../media/iiko-errors/stop-list.jpg)
 
 ## Another data exchange error { #other }
 

@@ -12,41 +12,37 @@ Open **Integrations → iiko**.
 
 - The restaurant's **API key**, an access key from iikoWeb for the required organizations.
 - **App ID** and **App Secret**, the connection identifier and secret supplied by the Tellem team; the CRM field for App Secret is **Client secret**.
-- A published menu with prices, an active iikoFront terminal group, and order types for dine-in and pickup.
+- A published external menu with prices, an active iikoFront terminal group, and order types for dine-in and pickup.
 - A payment type for each online payment method; dining areas and tables if you need table QR codes.
 
 !!! note "Who provides the credentials"
     Obtain the API key from iiko or your service partner. The Tellem team provides App ID and App Secret. Restaurants do not need to register an application on the iiko developer portal. Keep the credentials secret.
 
-Ask your iiko partner to prepare the published menu with prices; this connection does not require a separate external menu.
+Ask your iiko partner to prepare an external menu in iikoWeb and confirm which price category to use. Select the menu and prices [in the connection settings](#terminals).
 
 Before starting the wizard, [create stores](stores-and-delivery.md), enable **In establishment** and/or **Pickup**, and the required payments. For online payments, [connect a payment provider](payment-providers.md) first.
 
 ### What an iiko organization and terminal mean { #terms }
 
-A **Tellem store** is a location where customers place orders; stores and chains appear in the wizard's **Sales area** column.
+A **Tellem store** is a location where customers place orders; stores and chains appear under **Order destinations** in the wizard.
 
 An **iiko organization** is the venue that owns the menu, payment types, and checkout settings. A **terminal** in the wizard means the iikoFront terminal group receiving orders. Confirm it with the iiko administrator: several physical checkouts can belong to one group.
 
 ## Connection { #_1 }
 
-Click **Add integration**. Complete the five steps using **Next**, which validates the current step. **Back** returns to the previous step; **OK** on the last step saves the connection.
+Click **Add integration**. Complete the four steps using **Next**, which validates the current step. **Back** returns to the previous step; **Save** on the last step saves the connection.
 
-The screenshots show a demonstration CRM in Russian. Use your own venues and credentials; secret field values are hidden.
-
-### 1. API credentials { #credentials }
+### 1. Connection { #credentials }
 
 Enter a connection name, API key, App ID, and Client secret. For several restaurants, first confirm with your iiko partner that the key can access all required organizations.
 
-![Step 1: connection name and credential fields](../../media/iiko-setup/credentials.png)
-
 Click **Next**. If the check fails, [check credentials and access](iiko-errors.md#connection). If a restaurant is missing, ask your iiko partner to check the key's access to its organization.
 
-### 2. iiko terminals { #terminals }
+### 2. Venue connections { #terminals }
 
-For each **Sales area** row, select the organization and its checkout group under **Organization ID (iiko)** and **Terminal ID (iiko)**. The lists show names; you do not enter identifiers manually.
+Under **Order destinations**, select the **iiko organization** and **iiko terminal** for each store or chain. The lists show names; you do not enter identifiers manually.
 
-![Step 2: store, organization, and receiving checkout group](../../media/iiko-errors/terminals.jpg)
+Under **Menus and prices**, select an **External menu** for each organization. If only one menu is available, it is selected automatically. Set a **Price category** if needed; leaving the field empty with the **Menu prices** placeholder uses the menu's own prices. All terminals of one organization within this connection share the same menu and price category. After saving, run a [full import](#import-products) to apply your selection to the catalog immediately.
 
 | Operating setup | Mapping |
 |---|---|
@@ -58,18 +54,16 @@ For each **Sales area** row, select the organization and its checkout group unde
 !!! note "Mapping limits"
     Complete every row shown in the wizard. Each store has one organization and one group; orders are not distributed by checkout or fulfillment method. A second configuration does not add another terminal to the store.
 
-### 3. Payment method settings { #payments }
+### 3. Payments { #payments }
 
-Map each **online payment by link** method to a **Payment type from iiko** for the corresponding store's organization.
-
-![Step 3: online payment mapped to an iiko payment type](../../media/iiko-errors/payments.jpg)
+For each **online payment by link** method, select an **iiko payment method** for the corresponding store's organization.
 
 Agree on two options with the person responsible for the checkout:
 
-- **Processed externally**: an external system has already collected payment.
-- **Fiscalized externally**: an external system also issues the fiscal receipt. Leave this off if iiko issues it.
+- **Payment processed outside iiko**: an external system has already collected payment.
+- **Receipt issued outside iiko**: an external system also issues the fiscal receipt. Leave this off if iiko issues it.
 
-With payment on receipt only, the table is empty: continue, and the cashier will collect payment. Any online method added later needs its own mapping.
+With payment on receipt only, there is nothing to map: continue, and the cashier will collect payment. Any online method added later needs its own mapping.
 
 ### 4. Notifications { #notifications }
 
@@ -83,15 +77,13 @@ Add responsible staff, stores, and channels using the [notification recipient gu
     [![Recipient settings: Telegram and email selected for the demo store.](../../media/iiko-setup/notifications.en.png){ width="1280" height="720" loading=lazy }](../../media/iiko-setup/notifications.en.png)
     </figure>
 
-You can continue without recipients, but nobody will receive error messages.
+You can save the connection without recipients, but nobody will receive error messages.
 
-### 5. iiko stop list and saving { #setup-stop-list }
+Click **Save**. CRM validates all steps and returns to any incomplete step.
 
-Click **OK**. CRM validates all steps and returns to any incomplete step. For a first connection, the stop list status appears after saving.
+### Check stop lists after saving { #setup-stop-list }
 
-![Step 5: stop list status and save button](../../media/iiko-errors/stop-list.jpg)
-
-Open the saved connection using **Configure** and continue to the last step. Check each organization, terminal, and successful update time. **Not loaded yet** does not confirm an empty stop list. **Update now** queues a request; reopen the connection to see its result.
+On the connection card, open **Actions → Stop lists**. Check each venue and its successful update time. **Not loaded yet** does not confirm an empty stop list. **Refresh now** queues a request; reopen stop lists to see its result.
 
 **Hourly** mode means instant updates are not connected; see [how stop lists work](#-).
 
@@ -129,15 +121,20 @@ Open an import's **Details** in history to see created and changed menu items, a
 2. Choose **Entire menu**. The selected restaurant's import starts when the results window opens; there is no separate start action.
 3. Review created and updated products, skipped items, errors, and warnings in the report. Find a product by name or article code and select its row to preview the photo, price, stock, extras, and sizes on the right. Use the button that opens the product card to check it in the catalog.
 
-CRM adds missing products and categories, including dishes with sizes and supported extras. Categories with the same name are reused. Repeating the import updates names, descriptions, categories, prices, photos, sizes, extras, and availability without duplicates. Prices retain the fractional precision of the store currency. If iiko has no photos or the complete set cannot be downloaded, the existing CRM card keeps its photos. Unsupported dishes and items with invalid prices are skipped; check the report for the reason.
+CRM adds missing products and categories, including dishes with sizes and supported extras. Categories with the same name are reused. Repeating the import updates names, descriptions, categories, prices, photos, sizes, extras, and availability without duplicates. Prices retain the fractional precision of the store currency. If iiko has no photos or the complete set cannot be downloaded, the existing CRM card keeps its photos.
 
-Confirmed deletion of a dish or size removes it from the selected restaurant's assortment. When no store retains it in its assortment, CRM archives the product. Returning a dish or size with its original iiko link restores the same card and preserves order history. You cannot copy, delete, manually archive, or restore linked products or their groups in CRM. Change the menu in iiko and update it in CRM. Stop lists and zero stock do not archive products by themselves.
+Service items and dishes with invalid prices are skipped; check the report for the reason. If a dish's composition or extra rules cannot be transferred without changing their meaning, CRM does not apply the menu. Correct the reported cause in iiko and repeat the import.
 
-If a card is used by different iiko sources or CRM cannot confirm its previous import source, the report shows a conflict. CRM keeps the previous data instead of deleting or overwriting the shared card. Check restaurant bindings before repeating the import.
+Confirmed removal of a dish or size from the selected menu removes it from the restaurant's assortment. When no store retains it in its assortment, CRM archives the product. If the restaurant shares a warehouse with another store, CRM preserves the shared assortment and notes this in the report. Returning a dish or size with its original iiko link restores the same card and preserves order history. You cannot copy, delete, manually archive, or restore linked products or their groups in CRM. Change the menu in iiko and update it in CRM. Stop lists and zero stock do not archive products by themselves.
+
+If a card is already used by another iiko connection or organization, the report shows a conflict: CRM does not overwrite shared data. If the previous assortment's source is unconfirmed, CRM does not remove that assortment. Check restaurant bindings before repeating the import.
 
 Importing updates stock for products added from the menu separately for each terminal. A positive iiko limit becomes the CRM quantity without its fractional part, a stop gives zero, and no limit gives a nominal quantity. A nominal quantity does not confirm the physical number of portions. Size stock is tracked separately. The next successful full import — manual, hourly, or triggered by an iiko event — replaces the quantity, including any manually entered value; it does not add to the previous quantity. Previously linked products keep their manually managed stock.
 
-If a stock warning appears, CRM saves product cards but creates no new inventory and preserves previous quantities for affected terminals. Repeat the import after the connection recovers or wait for the next hourly update. A photo error does not prevent saving the product. A menu retrieval error or an empty response does not clear the catalog.
+If a stock warning appears, CRM saves product cards but creates no new inventory and preserves previous quantities for affected terminals. Repeat the import after the connection recovers or wait for the next hourly update. A photo error does not prevent saving the product.
+
+!!! warning "An empty menu removes products from sale"
+    A retrieval error or an unconfirmed incomplete response preserves the previous assortment. If iiko confirms again that the selected menu is empty, CRM removes previous items from the assortment under the rules above. Check a menu's contents before switching to it.
 
 Closing the window stops the import started from that window while preserving completed work. An independent automatic update continues running. Running the import again adds the remainder without duplicates. The summary shows processed sizes and extras; after a stop or errors, review the unprocessed part.
 
@@ -188,7 +185,7 @@ A stop list contains dishes whose sale is restricted by the checkout. At zero or
 
 After a stop is removed, CRM availability settings apply again: manual disabling, warehouse stock, and reservations. A stop list update alone does not overwrite warehouse stock; products added from the menu receive stock updates during [import](#import-products).
 
-Updates arrive through iiko events and hourly checks. If iiko already has another event recipient, Tellem preserves it and uses hourly checks. On failure, the last successful list stays in effect. For a manual check, open the [last setup step](#setup-stop-list).
+Updates arrive through iiko events and hourly checks. If iiko already has another event recipient, Tellem preserves it and uses hourly checks. On failure, the last successful list stays in effect. For a manual check, open the [connection's stop lists](#setup-stop-list).
 
 CRM checks the cart before creating an order and payment link. If a dish is unavailable, the customer must remove it or reduce its quantity; if the check fails, they must try checkout later.
 

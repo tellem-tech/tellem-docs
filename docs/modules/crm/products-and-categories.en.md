@@ -77,5 +77,4 @@ A product used in an order cannot be deleted from the regular list; archive it i
 
 For products linked to iiko, the [menu import](iiko.md#import-products) manages archiving and restoration. You cannot copy, delete, manually archive, restore, or merge these products or their groups. Remove them from a mixed selection before applying an action to regular products.
 
-
 In **Catalog → Archive**, “Publish” restores a product. Deletion from the archive is available if the product is not in an unfinished order.

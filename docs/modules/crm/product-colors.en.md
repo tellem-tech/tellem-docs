@@ -23,10 +23,10 @@ The catalog must already contain two simple products:
 | Demo matcha pink | Pink drink | 295 rubles |
 | Demo matcha green | Green drink | 295 rubles |
 
-If the products do not exist, add each through **Create → Create single** — see [Categories and products](products-and-categories.md). For a restaurant menu sent to iiko, use **Add from iiko** and the matching menu items.
+If the products do not exist, add each through **Create → Create single** — see [Categories and products](products-and-categories.md). You cannot merge iiko products manually: their variants are created from [menu sizes](iiko.md#sizes-and-extras).
 
 !!! warning "Before merging"
-    The selected products must not yet have any orders. Merge products of the same type: regular products with regular products, or iiko products with iiko products. Record their stock quantities by store and article codes: you will need to set them again after merging. Saving the new group replaces the original products.
+    The selected products must not yet have any orders. Only regular products can be merged. Record their stock quantities by store and article codes: you will need to set them again after merging. Saving the new group replaces the original products.
 
 <span id="2"></span>
 
