@@ -6,7 +6,7 @@ description: "Sign in to the Tellem app, manage personal details and bonus point
 
 # Account, installation, and notifications { #account-installation-and-notifications }
 
-Sign in to place orders, save addresses, and connect bonus points. Without signing in, you can [browse the catalog and search for products](ui-and-pages.md).
+Sign in to place orders, save addresses, and connect bonus points. Without signing in, you can [browse products and build a cart](ui-and-pages.md).
 
 <span id="_2"></span>
 
@@ -28,24 +28,24 @@ Choose your sales area, interface language, and theme in the profile. The langua
 
 ## Sign-in and registration { #sign-in-and-registration }
 
-In **Sign in or sign up**, enter your email, click **Get code**, enter the six-digit code from the email, and click **Sign in**. A new account is created after code confirmation. If the code expires or stops working after incorrect attempts, request a new one; the screen shows the wait before another request. On your first code sign-in, you receive an email with an automatically generated password.
-
-**Receive informational store mailings** is selected by default and applies only when creating an account. Later, change your subscription in [notification settings](customer-notifications.md#mailings).
+Open your profile and click **Log in**. In **Sign in or sign up**, enter your email, click **Get code**, enter the six-digit code from the email, and click **Log in**. Your profile opens after sign-in. A new account is created after code confirmation. If the code expires or stops working after incorrect attempts, request a new one; the screen shows the wait before another request. On your first code sign-in, you receive an email with an automatically generated password.
 
 ???+ example "Example: signing in with an email code"
 
-    Example with demo products. The recording shows the Russian interface.
+    Example with demo data. The recording shows the Russian interface.
 
     <figure markdown="span">
-    [![Signing in as a guest: Add to cart on the latte card opens the sign-in form; the guest enters an email, requests a code, enters it and signs in; the latte is already in the cart.](../../media/app/app-sign-in-email.en.gif){ width="960" height="540" loading=lazy }](../../media/app/app-sign-in-email.en.gif)
+    [![In the profile, the customer clicks Войти (Log in), enters an email, clicks Получить код (Get code), enters the six-digit code from the email and clicks Войти. The signed-in profile then shows the customer's details.](../../media/app/app-sign-in-email.en.gif){ width="960" height="540" loading=lazy }](../../media/app/app-sign-in-email.en.gif)
     </figure>
+
+**Receive informational store mailings** is selected by default and applies only when creating an account. Later, change your subscription in [notification settings](customer-notifications.md#mailings).
 
 Other sign-in methods:
 
 - **Sign in with password** uses your email and password. **Forgot password?** sends a reset code; requesting a new code invalidates the previous one. A new password must contain at least 8 characters.
 - **Telegram, VK ID, and Yandex**: select an available button above the form. For Telegram, start the store bot and return to the app. If Telegram does not open, click **Telegram didn't open? Open the link**. If confirmation expires, start sign-in again.
 
-After signing in from a product card, you return to the same product. If sign-in started from **Add to cart**, the product is added to the cart and the card closes; after **Buy**, the cart opens. The sales area selected before sign-in replaces the one saved in your profile, including when signing in through VK ID or Yandex. Closing the sign-in form returns you to the product.
+The sales area selected before sign-in replaces the one saved in your profile, including when signing in through VK ID or Yandex.
 
 In the Telegram Mini App, the app running inside Telegram, sign-in uses your Telegram account. Passwords, **Active sessions**, **Sign out**, Telegram linking, and push notifications are unavailable there. To manage them, open the store link in a browser and sign in using the Telegram button.
 

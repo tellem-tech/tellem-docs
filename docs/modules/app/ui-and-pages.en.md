@@ -6,7 +6,7 @@ description: "Find and choose products in the Tellem app, select variants, use f
 
 # Storefront and cart { #storefront-and-cart }
 
-Choose products in the catalog and add them to your cart. Guests can access the home screen, catalog, search, and product cards. For the cart, favorites, and orders, the app asks you to [sign in](account.md).
+Choose products in the catalog and add them to your cart. Guests can browse products, choose variants and extras, and edit the cart. The app asks you to [sign in](account.md) at checkout or when opening favorites and orders.
 
 If the store shows **18+ content**, continue only after confirming **I am 18 or older**.
 
@@ -78,9 +78,11 @@ Tap the heart on a product card to save it to **Favorites**. **Clear** removes t
 
 ## Cart { #cart }
 
+Your guest cart stays in this browser when you reload or return from sign-in. Each sales area has its own guest cart. Clearing browser data removes it.
+
 1. Select the products for your order. All items are selected when you open the cart; unselected items stay there.
 2. Check quantities, which cannot exceed available stock. After reducing a quantity to zero, you can use **Undo** while the button is visible.
-3. Check **Total** for the selected items and click **Place order for <amount>**. Apply promo codes and bonus points in the next step: [checkout](checkout.md).
+3. Check **Total** for the selected items and click **Place order for <amount>**. If you have not signed in, sign in or confirm your email to create an account. You then continue to [checkout](checkout.md), where you can apply promo codes, bonus points, and personal discounts. Your guest cart is added to your account cart: quantities of identical variants with identical extras are summed; different extras stay on separate lines. Check the updated prices before placing the order.
 
 ???+ example "Example: from the catalog to the cart"
 
@@ -93,7 +95,7 @@ Tap the heart on a product card to save it to **Favorites**. **Clear** removes t
 !!! warning "Deleting products"
     **Delete** removes all selected items after confirmation. You cannot undo this deletion.
 
-If the store reserves products in the cart, the reservation and cart quantities reset after a period of inactivity. Check your cart again before checkout.
+Guest products are not reserved. If the store reserves products in a signed-in customer’s cart, the reservation and cart quantities reset after a period of inactivity. Check your cart again before checkout.
 
 For a dish with extras, tap **Edit** to change the selection. The same product with different extras or extra quantities occupies separate lines; identical selections merge. The order retains the size and extras.
 
