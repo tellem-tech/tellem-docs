@@ -18,9 +18,18 @@ Open **Integrations → iiko**.
 !!! note "Who provides the credentials"
     Obtain the API key from iiko or your service partner. The Tellem team provides App ID and App Secret. Restaurants do not need to register an application on the iiko developer portal. Keep the credentials secret.
 
-Ask your iiko partner to prepare an external menu in iikoWeb and confirm which price category to use. Select the menu and prices [in the connection settings](#terminals).
-
 Before starting the wizard, [create stores](stores-and-delivery.md), enable **In establishment** and/or **Pickup**, and the required payments. For online payments, [connect a payment provider](payment-providers.md) first.
+
+### Prepare an external menu in iikoWeb { #external-menu }
+
+The steps below use the Russian iikoWeb labels.
+
+1. Open **Внешние заказы → Внешние меню** (external orders and menus). If you already have a suitable menu, open it and skip to step 3.
+2. Click **Добавить** (Add) and enter a name, such as “Menu for Tellem”. In **Ресторан для загрузки цен**, choose the restaurant whose prices you want to use. Set **Источник цен** (price source) to **Базовый прайс-лист** (base price list). Choose **Сгенерировать меню** (generate menu), then click **Сохранить** (Save). iikoWeb builds the menu from dishes and products that have a price and a place of sale.
+3. Open **Список блюд** (dish list). Check that the menu includes the items, sizes, and extras you need. In iikoOffice, open **Прейскурант → Прейскуранты товаров и услуг** (Price list → Goods and services price lists) and select a date. Compare prices for dishes, sizes, and paid extras with the **Цена** (price) column of the restaurant's base price list. You can also compare the amounts from a regular dine-in sale in iikoFront.
+4. Under **Настройки Cloud API → Интеграции** (Cloud API settings → Integrations), open the integration whose API key you use for Tellem. On the **Основное** (General) tab, choose the prepared menu and set **Источник цен → Внешнее меню** (price source → external menu). On the **Подключенные точки** (connected locations) tab, check that the right restaurant is selected. Save your changes.
+
+If the restaurant already uses Tellem, compare the new menu with the current CRM assortment and check which prices will change before switching. Items and sizes missing from the new menu may be removed from the assortment during a [full import](#import-products).
 
 ### What an iiko organization and terminal mean { #terms }
 
@@ -30,7 +39,7 @@ An **iiko organization** is the venue that owns the menu, payment types, and che
 
 ## Connection { #_1 }
 
-Click **Add integration**. Complete the four steps using **Next**, which validates the current step. **Back** returns to the previous step; **Save** on the last step saves the connection.
+For a new connection, click **Add integration**. To switch menus on an existing connection, click **Configure** on its card. Complete the four steps using **Next**, which validates the current step. **Back** returns to the previous step. Click **Save** on the last step.
 
 ### 1. Connection { #credentials }
 
@@ -42,7 +51,7 @@ Click **Next**. If the check fails, [check credentials and access](iiko-errors.m
 
 Under **Order destinations**, select the **iiko organization** and **iiko terminal** for each store or chain. The lists show names; you do not enter identifiers manually.
 
-Under **Menus and prices**, select an **External menu** for each organization. If only one menu is available, it is selected automatically. Set a **Price category** if needed; leaving the field empty with the **Menu prices** placeholder uses the menu's own prices. All terminals of one organization within this connection share the same menu and price category. After saving, run a [full import](#import-products) to apply your selection to the catalog immediately.
+Under **Menus and prices**, select an **External menu** for each organization. If only one menu is available, it is selected automatically. To use the external menu's own prices, leave **Price category** empty. The field shows **Menu prices**. All terminals of one organization within this connection share the same menu and price category. Save the connection and run a [full import](#import-products).
 
 | Operating setup | Mapping |
 |---|---|
@@ -118,8 +127,16 @@ Open an import's **Details** in history to see created and changed menu items, a
     A full import, including an automatic update, makes new products with positive stock available to customers immediately. Repeating the import enables **Show in catalog** for previously hidden cards too; sale status under **Inventory** is preserved. Publish a menu in iiko when it is ready for sale. Manually edited names, descriptions, categories, and prices apply until the next full import.
 
 1. In **Integrations → iiko**, find the restaurant on the connection card and click **Import products** in its row.
-2. Choose **Entire menu**. The selected restaurant's import starts when the results window opens; there is no separate start action.
-3. Review created and updated products, skipped items, errors, and warnings in the report. Find a product by name or article code and select its row to preview the photo, price, stock, extras, and sizes on the right. Use the button that opens the product card to check it in the catalog.
+2. Under **Entire menu**, click **Add products from iiko**. The import starts when the results window opens.
+3. Review created and updated products, skipped items, errors, and warnings in the report. Find a product by name or article code and select its row to preview the photo, price, stock, extras, and sizes. Where available, compare the price of a regular item, the prices for each size of a dish, and the price of a paid extra with the external menu. Use the button that opens the product card to check it in the catalog.
+
+???+ example "Example: selecting and importing the entire menu"
+
+    The recording shows the Russian interface.
+
+    <figure markdown="span">
+    [![Selecting the external menu, starting a full import, and viewing the results in CRM](../../media/crm/iiko-menu-import.en.gif){ width="960" height="540" loading=lazy }](../../media/crm/iiko-menu-import.en.gif)
+    </figure>
 
 CRM adds missing products and categories, including dishes with sizes and supported extras. Categories with the same name are reused. Repeating the import updates names, descriptions, categories, prices, photos, sizes, extras, and availability without duplicates. Prices retain the fractional precision of the store currency. If iiko has no photos or the complete set cannot be downloaded, the existing CRM card keeps its photos.
 
