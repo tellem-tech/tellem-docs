@@ -31,6 +31,14 @@ The steps below use the Russian iikoWeb labels.
 
 If the restaurant already uses Tellem, compare the new menu with the current CRM assortment and check which prices will change before switching. Items and sizes missing from the new menu may be removed from the assortment during a [full import](#import-products).
 
+???+ example "Example of creating a menu in iikoWeb"
+
+    The recording shows the Russian interface.
+
+    <figure markdown="span">
+    [![Creating an external menu from the base price list and reviewing the dishes in iikoWeb](../../media/crm/iiko-external-menu-setup.en.gif){ width="960" height="540" loading=lazy }](../../media/crm/iiko-external-menu-setup.en.gif)
+    </figure>
+
 ### What an iiko organization and terminal mean { #terms }
 
 A **Tellem store** is a location where customers place orders; stores and chains appear under **Order destinations** in the wizard.
