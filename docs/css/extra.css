@@ -60,6 +60,20 @@
   box-shadow: none;
 }
 
+.md-progress {
+  height: 3px;
+  background: var(--md-accent-fg-color);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-progress {
+    width: 30%;
+    transform: none;
+    /* Keep the delay despite Material disabling transitions in this mode. */
+    transition: opacity 0s var(--md-progress-delay) !important;
+  }
+}
+
 .md-header__title { min-width: 0; }
 .md-search__form { border: 1px solid var(--tellem-surface-line); border-radius: .35rem; background: var(--tellem-surface-bg); }
 
