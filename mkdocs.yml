@@ -33,7 +33,9 @@ nav:
       - Настройки:
           - Основные: modules/crm/general-settings.md
           - Уведомления: modules/crm/crm-notifications.md
-          - Оплата: modules/crm/payment-providers.md
+          - Оплата:
+              - Оплата: modules/crm/payment-providers.md
+              - Сбербанк: modules/crm/sberbank.md
           - Доставка: modules/crm/delivery.md
           - Поля заказа: modules/crm/custom-fields.md
       - Интеграции:
@@ -150,6 +152,7 @@ plugins:
             Основные: General
             Уведомления: Notifications
             Оплата: Payments
+            Сбербанк: Sberbank
             Доставка: Delivery
             Поля заказа: Order fields
             Интеграции: Integrations

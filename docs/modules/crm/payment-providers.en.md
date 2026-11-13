@@ -62,7 +62,7 @@ Copy the remaining credentials from the selected provider's account.
 | T-Bank, SBP (T-Bank); Alfa-Bank, SBP (Alfa-Bank) | Optional order number prefix: Latin letters |
 | Robokassa | MD5 is the supported hash algorithm |
 | SBP (ArcoPay) | Choose a single-use or reusable SBP link |
-| Sberbank, SBP (Sberbank) | Set **Notification checksum type** and **Notification verification key** so CRM accepts bank notifications |
+| Sberbank, SBP (Sberbank) | [Obtain internet terminal credentials and set up notifications](sberbank.md) |
 | Beta Transfer | Set **Minimum payment amount** according to the provider terms. It limits the positive balance after redeeming bonuses and cannot lower the service's minimum in CRM |
 | Tochka Bank, Tochka Bank (SBP) | [Obtain a token and select account details](#tochka) |
 
@@ -75,7 +75,7 @@ Copy addresses from CRM to the provider's account:
 - **YooKassa:** **Details for personal account → Notification URL**; select `payment.succeeded` and `payment.canceled` events.
 - **Robokassa:** on the same tab, use POST for Result URL and GET for Success URL and Fail URL.
 - **Beta Transfer:** Result, Success, and Fail URLs are under **Additional information**.
-- **Sberbank:** request the address from the Tellem team and enter it in the bank account. Without verification settings, CRM rejects notifications; the status updates on the next payment check.
+- **Sberbank:** Tellem support provides the address. Enter it in SberBusiness and set the verification parameters in CRM as described in [Payment notifications](sberbank.md#notifications).
 
 T-Bank and ArcoPay receive the address with the payment. Alfa-Bank checks statuses without notifications. YooKassa status checks continue regardless of **Update payment statuses using the scheduler**.
 
