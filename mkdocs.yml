@@ -33,9 +33,7 @@ nav:
       - Настройки:
           - Основные: modules/crm/general-settings.md
           - Уведомления: modules/crm/crm-notifications.md
-          - Оплата:
-              - Оплата: modules/crm/payment-providers.md
-              - Сбербанк: modules/crm/sberbank.md
+          - Оплата: modules/crm/payment-providers.md
           - Доставка: modules/crm/delivery.md
           - Поля заказа: modules/crm/custom-fields.md
       - Интеграции:
@@ -152,7 +150,6 @@ plugins:
             Основные: General
             Уведомления: Notifications
             Оплата: Payments
-            Сбербанк: Sberbank
             Доставка: Delivery
             Поля заказа: Order fields
             Интеграции: Integrations
@@ -225,6 +222,9 @@ plugins:
         modules/crm/sales.md: modules/crm/promo-codes.md
         modules/crm/pwa-and-support.md: modules/crm/general-settings.md
         modules/app/install-and-notifications.md: modules/app/account.md
+        # Инструкция Сбербанка перенесена к другим провайдерам на страницу «Оплата» (2026-11)
+        modules/crm/sberbank.md: modules/crm/payment-providers.md#sberbank
+        en/modules/crm/sberbank.md: https://docs.tellem.tech/en/modules/crm/payment-providers/#sberbank
   - git-revision-date-localized:
       type: date
       locale: ru
