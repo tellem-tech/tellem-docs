@@ -71,7 +71,9 @@ After you block messages in VK, the channel row updates on the next attempt to s
 
 ## Telegram { #telegram }
 
-Click **Telegram** on the sign-in screen, **Link** next to Telegram in your profile, or **Connect** under **Profile → Notifications**. Press **Start** in the store bot and return to the app; its status updates. A stopped or blocked bot cannot send messages; click **Open bot** and start it.
+In a browser, select **Connect** under **Profile → Notifications**. Select **Open bot**, then tap **Start** and **Confirm linking** in Telegram. If Telegram did not open, select **Open bot** again. After confirming, return to the app. If the storefront offers a merge, follow the [steps for merging accounts](account.md#linking-and-merging-accounts).
+
+If the bot is stopped or blocked, select **Open bot** and start it again.
 
 Inside Telegram, your account connects when you open the store. If the bot has not been started, follow **Tap Start in the bot chat**.
 
