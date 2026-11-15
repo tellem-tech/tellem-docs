@@ -1,6 +1,7 @@
 """Check Russian/English page pairs, nav translations, media references and media budgets."""
 
 import re
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -13,7 +14,9 @@ MEDIA = DOCS / "media"
 GIF_BUDGET = 2.5 * 1024 * 1024
 PNG_BUDGET = 300 * 1024
 
-ANCHOR = re.compile(r"\{#([\w-]+)\}")
+# The one anchor pattern: `{#id}` and `{ #id }` both count. test_pinned_urls imports it.
+ANCHOR = re.compile(r"\{\s*#([\w-]+)\s*\}")
+PLANS = "superpowers"
 HEADING = re.compile(r"^#{1,6}\s", re.MULTILINE)
 IMAGE = re.compile(r"!\[[^\]]*\]\(")
 LINK = re.compile(r"(?<!!)\[[^\]]*\]\(([^)\s]+)")
@@ -22,8 +25,23 @@ CYRILLIC = re.compile(r"[А-Яа-яЁё]")
 TEXT_SUFFIXES = {".md", ".css", ".js", ".html", ".yml"}
 
 
-def ru_pages():
-    return sorted(p for p in DOCS.rglob("*.md") if not p.name.endswith(".en.md"))
+def doc_files(base, pattern):
+    """Files under `base` matching `pattern`, without the ignored local plans in `<base>/superpowers/`."""
+    return sorted(p for p in base.rglob(pattern) if PLANS not in p.relative_to(base).parts[:1])
+
+
+def ru_pages(docs=DOCS):
+    return [p for p in doc_files(docs, "*.md") if not p.name.endswith(".en.md")]
+
+
+def anchor_mismatches(docs=DOCS):
+    mismatched = []
+    for ru in ru_pages(docs):
+        ids = set(ANCHOR.findall(ru.read_text(encoding="utf-8")))
+        en_ids = set(ANCHOR.findall(en_pair(ru).read_text(encoding="utf-8")))
+        if ids != en_ids:
+            mismatched.append(f"{ru.relative_to(docs)}: {sorted(ids ^ en_ids)}")
+    return mismatched
 
 
 def en_pair(page):
@@ -62,7 +80,10 @@ def nav_labels(node):
 
 def mkdocs_config():
     # mkdocs.yml uses !!python/name tags in extensions; load only what the tests read.
-    loader = yaml.SafeLoader
+    class Loader(yaml.SafeLoader):
+        pass
+
+    loader = Loader
     loader.add_multi_constructor("tag:yaml.org,2002:python/", lambda *_: None)
     loader.add_multi_constructor("!", lambda *_: None)
     return yaml.load((ROOT / "mkdocs.yml").read_text(encoding="utf-8"), Loader=loader)
@@ -70,7 +91,7 @@ def mkdocs_config():
 
 class PagePairTest(unittest.TestCase):
     def test_every_page_has_its_pair(self):
-        pages = set(DOCS.rglob("*.md"))
+        pages = set(doc_files(DOCS, "*.md"))
         missing = []
         for page in sorted(pages):
             name = page.name.removesuffix(".en.md") + ".md" if page.name.endswith(".en.md") else page.stem + ".en.md"
@@ -80,13 +101,7 @@ class PagePairTest(unittest.TestCase):
         self.assertEqual([], missing, "Missing translation counterparts")
 
     def test_pairs_share_anchor_ids(self):
-        mismatched = []
-        for ru in ru_pages():
-            ids = set(ANCHOR.findall(ru.read_text(encoding="utf-8")))
-            en_ids = set(ANCHOR.findall(en_pair(ru).read_text(encoding="utf-8")))
-            if ids != en_ids:
-                mismatched.append(f"{ru.relative_to(ROOT)}: {sorted(ids ^ en_ids)}")
-        self.assertEqual([], mismatched)
+        self.assertEqual([], anchor_mismatches())
 
     def test_pairs_share_structure(self):
         mismatched = []
@@ -96,6 +111,24 @@ class PagePairTest(unittest.TestCase):
             if diff:
                 mismatched.append(f"{ru.relative_to(ROOT)}: {diff}")
         self.assertEqual([], mismatched)
+
+
+class AnchorProbeTest(unittest.TestCase):
+    def test_spaced_anchor_on_one_side_fails(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            docs = Path(tmp)
+            (docs / "a.md").write_text("## Title { #x }\n", encoding="utf-8")
+            (docs / "a.en.md").write_text("## Title\n", encoding="utf-8")
+            self.assertEqual(["a.md: ['x']"], anchor_mismatches(docs))
+            (docs / "a.en.md").write_text("## Title {#x}\n", encoding="utf-8")
+            self.assertEqual([], anchor_mismatches(docs))
+
+    def test_plans_are_not_scanned(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            docs = Path(tmp)
+            (docs / "superpowers").mkdir()
+            (docs / "superpowers" / "plan.md").write_text("no pair\n", encoding="utf-8")
+            self.assertEqual([], ru_pages(docs))
 
 
 class NavTranslationTest(unittest.TestCase):
@@ -116,7 +149,7 @@ class MediaTest(unittest.TestCase):
 
     def test_media_is_referenced(self):
         sources = [ROOT / "mkdocs.yml"] + [
-            p for base in (DOCS, ROOT / "overrides") for p in base.rglob("*")
+            p for base in (DOCS, ROOT / "overrides") for p in doc_files(base, "*")
             if p.is_file() and p.suffix in TEXT_SUFFIXES
         ]
         corpus = "\n".join(p.read_text(encoding="utf-8") for p in sources)

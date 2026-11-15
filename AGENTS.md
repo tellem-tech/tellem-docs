@@ -95,7 +95,7 @@ Treat style advice as editorial guidance. Preserve prerequisites, conditions, wa
 
 - Read related pages before editing. When a workflow changes, check both languages, the CRM and customer app sections, navigation, cross-links, and images. Preserve unrelated work.
 - Keep published URLs stable. When moving or merging a page, add a redirect under `plugins.redirects.redirect_maps` in `mkdocs.yml` and update internal links. Account for links from CRM help and other entry points.
-- Pinned URLs live in `tests/pinned-urls.txt`; a moved page keeps them through a redirect, and a pinned anchor stays an explicit `{#id}` in both languages. `tests/test_pinned_urls.py` checks every line.
+- Pinned URLs live in `tests/pinned-urls.txt`; a moved page keeps its pinned URLs through a redirect, and a pinned anchor stays an explicit `{#id}` in both languages. A redirect cannot keep an anchor: the test fails it, so a page with a pinned anchor moves only after its consumers change. `tests/test_pinned_urls.py` checks every line.
 - Preserve the meaning of legal documents in `docs/legal/`. The current Russian version is `<document>/index.md`; its English translation is `<document>/index.en.md`. Update the revision date and translation when issuing a new revision; previous versions remain in Git history. Keep legacy `/legal/en/` URLs working through redirects.
 - Run `python -m mkdocs build --strict` after changes. Also check changed links, anchors, images, and readability: a successful build does not verify factual accuracy or external website availability.
 - Commit on `master` when asked; a push publishes the site.

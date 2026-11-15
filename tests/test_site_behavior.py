@@ -10,6 +10,8 @@ from urllib.parse import parse_qs, urlsplit
 from jinja2 import DictLoader, Environment
 import yaml
 
+from test_pages import doc_files
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -27,7 +29,7 @@ class Links(HTMLParser):
 
 class SiteBehaviorTest(unittest.TestCase):
     def test_page_metadata_is_valid_yaml(self):
-        for source in (ROOT / "docs").rglob("*.md"):
+        for source in doc_files(ROOT / "docs", "*.md"):
             text = source.read_text(encoding="utf-8")
             if not text.startswith("---\n"):
                 continue

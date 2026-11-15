@@ -5,10 +5,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from test_pages import DOCS, ROOT, mkdocs_config
+from test_pages import ANCHOR, DOCS, ROOT, mkdocs_config
 
+# Same rules as the META scanner: these characters end a URL capture, and `%` marks a template.
+UNPINNABLE = re.compile(r"[»;|%]")
 MANIFEST = ROOT / "tests" / "pinned-urls.txt"
-EXPLICIT_ANCHOR = re.compile(r"\{\s*#([\w-]+)\s*\}")
 
 
 def manifest_entries(path):
@@ -32,6 +33,10 @@ def redirect_keys(site_path):
 def problem(entry, docs, redirects):
     """Why a manifest line no longer resolves, or None when it does."""
     site_path, _, anchor = entry.partition("#")
+    if UNPINNABLE.search(entry):
+        return "contains a character that ends a URL capture or marks a template"
+    if "." in site_path.rstrip("/").rsplit("/", 1)[-1]:
+        return "file links are not pinned: pin the page that links to the file"
     if not site_path.startswith("/") or not site_path.endswith("/"):
         return "not normalized: expected /<path>/ with an optional #anchor"
     # An anchor is pinned on both language versions of a Russian page.
@@ -42,7 +47,7 @@ def problem(entry, docs, redirects):
             break
         if not found:
             return f"no English page for {site_path}"
-        if anchor and anchor not in EXPLICIT_ANCHOR.findall((docs / found[0]).read_text(encoding="utf-8")):
+        if anchor and anchor not in ANCHOR.findall((docs / found[0]).read_text(encoding="utf-8")):
             return f"no explicit {{#{anchor}}} on {found[0].as_posix()}"
     else:
         return None
@@ -99,6 +104,14 @@ class ProblemProbeTest(unittest.TestCase):
     def test_anchor_on_a_redirected_path_fails(self):
         self.assertEqual("anchor on a redirected path", problem("/old/#x", self.docs, {"old.md": "y"}))
         self.assertEqual("no page and no redirect", problem("/old/#x", self.docs, {}))
+
+    def test_capture_enders_and_templates_fail(self):
+        for entry in ("/a/b/»", "/a/b/;", "/a/b/|x/", "/a/%s/"):
+            self.assertIn("capture", problem(entry, self.docs, {}), entry)
+
+    def test_file_link_gets_a_clear_message(self):
+        self.assertIn("file links are not pinned", problem("/a/file.pdf", self.docs, {}))
+        self.assertIn("file links are not pinned", problem("/a/file.pdf/", self.docs, {}))
 
     def test_unnormalized_line_fails(self):
         self.assertIsNotNone(problem("a/b/", self.docs, {}))
