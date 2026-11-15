@@ -6,9 +6,9 @@ description: "Configure Tellem fulfillment and free delivery, connect carriers, 
 
 # Delivery { #delivery }
 
-Order fulfillment methods include your own courier delivery and pickup, as well as CDEK, Yandex, Ozon, and Russian Post. For CDEK and Yandex, CRM also creates shipments and updates order statuses automatically.
+Order fulfillment methods include your own courier delivery and pickup, as well as CDEK, Yandex, Ozon, and Russian Post. CRM creates shipments and updates order statuses for CDEK and Yandex Delivery.
 
-Open **Settings → Delivery** to configure a method. Check CDEK and Yandex shipments under **Delivery information** in the order.
+Open **Settings → Delivery** to configure a method. Check shipments created in CRM under **Delivery information** in the order.
 
 <span id="_2"></span>
 
@@ -64,6 +64,8 @@ The store pays the carrier's charge; an unavailable delivery method remains unav
 
 At checkout, customers see how much more to add for free delivery. Each method has its own threshold; changing the setting does not recalculate existing orders.
 
+For [CDEK pickup points](#cdek), the threshold and tip apply only to the default country. In other countries, the customer sees the rate calculated by CDEK.
+
 [Example: use free delivery to increase order value](free-delivery.md).
 
 ## Connect a carrier { #carrier-setup }
@@ -76,6 +78,10 @@ At checkout, customers see how much more to add for free delivery. Each method h
 
     On the **Integration** tab, enter the **Account** and **Secret password** from your CDEK account and select a **CDEK rate**, such as **Parcel — warehouse to warehouse (136)**. **Refresh rates** reloads the list. Warehouse means a CDEK point; door means an address. The rate determines the method's type: door delivery is **Delivery**, and delivery to a pickup point is **Pickup**. Parcel locker rates are not supported. Automatic registration works only for rates from a door or warehouse to a door or pickup point.
 
+    For a pickup point rate, open the **General** tab. First check in your CDEK account that your contracted rate covers the countries you want to add. Add them under **Additional delivery countries**. Customers see the country list at [checkout](../app/checkout.md#delivery-method).
+
+    **Default delivery country** starts as Russia. If you select another country, the previous one moves to **Additional delivery countries**. To stop shipping to the previous country, remove it from that list.
+
     **Sender postal code** is required. For automatic shipments, also complete:
 
     - **Origin city**: the full city name.
@@ -83,7 +89,7 @@ At checkout, customers see how much more to add for free delivery. Each method h
     - For warehouse-origin rates, **CDEK origin point**, where you hand over the parcel. This is not the customer's pickup point.
     - For door-origin rates, **Full sender address**.
 
-    These details are not needed to calculate a rate. If they are missing after payment, the reason appears under **Delivery information**.
+    If registration fails after payment because these details are missing, see **Diagnostic message** in [technical delivery details](#delivery-information). Rate calculation can proceed without these details.
 
 === "Yandex"
 
@@ -122,7 +128,9 @@ At checkout, customers see how much more to add for free delivery. Each method h
 
 ## Shipments { #shipments }
 
-Available only for CDEK and Yandex. For Ozon and Russian Post, CRM does not create shipments or show **Delivery information**. Create the shipment in the carrier's account and update the order status manually.
+CRM creates Yandex Delivery and CDEK shipments, including shipments to CDEK pickup points outside Russia. Create Ozon and Russian Post shipments in the carrier's account. Update those order statuses manually.
+
+The following rules apply to shipments in CRM.
 
 - A shipment is created as soon as an order becomes **Paid**, without waiting for the hourly check. It is prepaid, with no cash on delivery: the customer pays nothing on receipt, and the carrier charges you under your contract.
 - If you accept an order before it becomes **Paid**, or use payment on receipt, no shipment is created automatically. Create it in the carrier's account. The order's section will show **Not created**.
@@ -133,12 +141,12 @@ Available only for CDEK and Yandex. For Ozon and Russian Post, CRM does not crea
 
 ### Delivery information { #delivery-information }
 
-Check the shipment status, waybill number, and next check time. **Message** explains failures. Shipment status is separate from order status.
+The order's **Delivery information** section shows **Shipment status** and **Tracking number**. CRM checks the status automatically.
 
-Buttons:
+If there is a problem, expand **Technical delivery details**. **Next check** shows when CRM will check again, and **Diagnostic message** explains any failure. The manual actions are in the same section.
 
 - **Create shipment**: available when shipment status is **Not created** and the order is **Paid**.
-- **Request carrier status**: available after a registration attempt while the order is not **Completed**, **Canceled**, **Returned**, or **Payment error**. It does not wait for the hourly check. If the response during creation was lost, it first looks for an existing shipment to avoid a duplicate. After a few seconds, click **Refresh data**, which only refreshes the displayed order details.
+- **Check with carrier**: available after a registration attempt while the order is not **Completed**, **Canceled**, **Returned**, or **Payment error**. It does not wait for the hourly check. If the response during creation was lost, it first looks for an existing shipment to avoid a duplicate. After a few seconds, click **Refresh displayed data** to reload the order details.
 - **Retry after correction**: available for **Needs correction** if the shipment was not created.
 
 | Shipment status | Meaning and action |
@@ -148,11 +156,11 @@ Buttons:
 | Registered | The carrier created the shipment but has not accepted the parcel. Prepare and hand it over; the order status does not change |
 | In delivery | The carrier accepted the parcel. The order is In delivery; the next change follows delivery to the customer |
 | Delivered | The order is Completed; checks stop |
-| Result being confirmed | The carrier's response was lost or the status is unknown. Click Request carrier status if available; otherwise wait for the hourly check |
-| Needs correction | The carrier rejected the shipment or required details are missing. Read Message, correct the problem, and click Retry after correction |
+| Result being confirmed | The carrier's response was lost or the status is unknown. Click Check with carrier if available; otherwise wait for the hourly check |
+| Needs correction | The carrier rejected the shipment or required details are missing. Read Diagnostic message, correct the problem, and click Retry after correction |
 | Not delivered, Canceled | Investigate in the carrier's account and handle the order manually; it is not marked successfully completed automatically |
 
-Example reasons shown in **Message**:
+**Examples under Diagnostic message**
 
 - Yandex: **Complete company connection and accept the offer in your Yandex Delivery account** means the contract and offer steps are incomplete. Complete them, then click **Retry after correction**.
 - CDEK: the sender's name, phone, origin point, or address is missing, or the order has no recipient details.

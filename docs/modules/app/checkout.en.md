@@ -24,10 +24,12 @@ The following fields depend on the method type:
 
 - **Delivery** — an address: **Select a delivery address** or **Add new address**. If none are saved, the tip says **No saved addresses. Add one in your profile.**
 - **Pickup** — a store location. Tap it to choose another one in **Choose a pickup point**; until a location is selected, the field reads **Choose location**.
-- **CDEK or Yandex Delivery pickup point** — choose **City / locality**: enter at least two letters and select the suggestion with the correct region. Then find a pickup point by street, name, or code. You do not need to create a home address. Select the point again if you change the city or method. If loading fails, click **Try again**.
+- **CDEK or Yandex Delivery pickup point** — if CDEK delivery is available to several countries, use **Country** before choosing a city. Open **City / locality**, enter at least two letters, and select the suggestion with the correct region. Then find a pickup point by street, name, or code. You do not need a home address. If you change the country, select the city and point again. If you change the city or fulfillment method, select the point again. If loading fails, click **Try again**.
 - **Ozon pickup point** — first select an address, which determines the city, then **Choose a pickup point** with **Search by address or name**. Select the point again if you change the address or method. The recipient's phone number must be registered with Ozon; insurance is already included in the delivery cost.
 - **In establishment** — the same **Choose location** field. Opening the app from an iiko table QR code fills in the venue and table number automatically; you can change the number. The table association resets after an order, when you change the venue or fulfillment method, and when the association expires. Check the table number before checkout.
 - **Online** — no physical delivery or handover; no address or venue is needed.
+
+For a CDEK pickup point outside Russia, enter the recipient's phone number in international format, with `+` and the country code.
 
 ???+ example "Example: a pickup order with payment on receipt"
 
@@ -144,7 +146,7 @@ Open **Profile → My orders**, then choose an order. Check fulfillment, payment
 | **Canceled** | Order canceled |
 | **Returned** | A return has been recorded |
 
-The store changes the status; online payment is confirmed automatically. For CDEK and Yandex Delivery shipments, the status updates using carrier data with a delay. Arrival at a pickup point does not itself complete the order.
+The store changes the status. The app shows online payment confirmation automatically. For CDEK and Yandex Delivery shipments, the order status updates from carrier data with a delay. Arrival at a pickup point does not complete the order.
 
 To receive messages about status changes, [connect notifications](customer-notifications.md).
 
