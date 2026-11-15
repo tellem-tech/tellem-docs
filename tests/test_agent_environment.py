@@ -1,5 +1,6 @@
 """Check that the versioned skill set works without global skill installations."""
 
+import hashlib
 import re
 import unittest
 from pathlib import Path
@@ -60,6 +61,17 @@ class AgentEnvironmentTest(unittest.TestCase):
             with self.subTest(skill=skill.name):
                 self.assertIn(f".agents/skills/{skill.name}/SKILL.md", rules)
                 self.assertIn(skill.name, (SKILLS / "SOURCES.md").read_text(encoding="utf-8"))
+
+    def test_shared_block_matches_its_hash(self):
+        text = (ROOT / "AGENTS.md").read_text(encoding="utf-8").replace("\r\n", "\n")
+        match = re.search(
+            r"^<!-- tellem-shared:begin source=\S+ sha256=([0-9a-f]{64}) -->\n(.*?)^<!-- tellem-shared:end -->$",
+            text,
+            re.MULTILINE | re.DOTALL,
+        )
+        self.assertIsNotNone(match, "AGENTS.md has no shared block")
+        inner = "\n".join(match.group(2).strip("\n").split("\n"))  # same trim as the sync script
+        self.assertEqual(hashlib.sha256(inner.encode()).hexdigest(), match.group(1), "Shared block was edited by hand")
 
 
 if __name__ == "__main__":
