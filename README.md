@@ -39,7 +39,7 @@ python -m mkdocs build --strict
 
 Check external links and the text's accuracy against the interface separately. Some shared screenshots show the Russian interface.
 
-CI also checks that every page has a translation. Link preview cards are enabled in CI and disabled in local builds by default.
+The [page tests](tests/test_pages.py) check page pairs, nav translations, orphan media and media budgets; CI runs them on pull requests. Link preview cards are enabled in CI and disabled in local builds by default.
 
 ## Product screenshots and GIFs
 
@@ -55,6 +55,6 @@ Update both language pages with matching actions and captions. Identify shared R
 
 ## Publication
 
-The [deployment workflow](.github/workflows/mkdocs-deploy.yml) runs on pushes to `master` or manually through **Run workflow** in GitHub Actions. After a successful strict build, it deploys both languages to GitHub Pages.
+The [deployment workflow](.github/workflows/mkdocs-deploy.yml) runs the checks on pull requests, and on pushes to `master` or manually through **Run workflow** in GitHub Actions, and deploys only from `master`. After a successful strict build, it deploys both languages to GitHub Pages.
 
 Pushing to `master` also publishes legal documents. Make sure all changes are ready for public access before pushing.

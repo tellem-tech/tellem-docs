@@ -4,21 +4,19 @@ on:
   push:
     branches:
       - master
+  pull_request:
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: ${{ github.event_name == 'pull_request' && format('pr-{0}', github.head_ref) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
     name: Build site
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -38,24 +36,8 @@ jobs:
       - name: Install MkDocs and plugins
         run: pip install -r requirements.txt
 
-      - name: Check shared agent environment
+      - name: Run tests
         run: python -m unittest discover -s tests -v
-
-      - name: Check Russian and English page pairs
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          pages = set(Path("docs").rglob("*.md"))
-          missing = []
-          for page in sorted(pages):
-              name = page.name.removesuffix(".en.md") + ".md" if page.name.endswith(".en.md") else page.stem + ".en.md"
-              counterpart = page.with_name(name)
-              if counterpart not in pages:
-                  missing.append(str(counterpart))
-          assert not missing, "Missing translation counterparts:\n" + "\n".join(missing)
-          print(f"Checked {len(pages) // 2} Russian/English page pairs")
-          PY
 
       - name: Build MkDocs site
         run: mkdocs build --strict
@@ -66,6 +48,7 @@ jobs:
           DISABLE_MKDOCS_2_WARNING: true
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./site
@@ -73,7 +56,11 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
