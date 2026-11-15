@@ -1,6 +1,6 @@
 # Public docs URLs that the apps, the account and the landing link to. Every line must resolve to a page,
 # an explicit {#anchor} or a redirect (tests/test_pinned_urls.py). A new link from an app is a new line here.
-# Lines are site paths: a leading /, a trailing / (or a file name) and an optional #anchor.
+# Lines are site paths: a leading /, a trailing / and an optional #anchor.
 
 # Site roots (landing, apps and CRM help link to them).
 /
@@ -67,6 +67,7 @@
 /modules/crm/crm-notifications/
 /modules/crm/custom-fields/
 /modules/crm/delivery/
+/modules/crm/first-promo-code/
 /modules/crm/general-settings/
 /modules/crm/iiko/
 /modules/crm/iiko/#qr-

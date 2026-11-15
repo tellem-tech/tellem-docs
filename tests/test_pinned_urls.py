@@ -32,7 +32,7 @@ def redirect_keys(site_path):
 def problem(entry, docs, redirects):
     """Why a manifest line no longer resolves, or None when it does."""
     site_path, _, anchor = entry.partition("#")
-    if not site_path.startswith("/") or not (site_path.endswith("/") or "." in site_path.rsplit("/", 1)[-1]):
+    if not site_path.startswith("/") or not site_path.endswith("/"):
         return "not normalized: expected /<path>/ with an optional #anchor"
     # An anchor is pinned on both language versions of a Russian page.
     sites = [site_path, "/en" + site_path] if anchor and not site_path.startswith("/en/") else [site_path]
@@ -46,8 +46,8 @@ def problem(entry, docs, redirects):
             return f"no explicit {{#{anchor}}} on {found[0].as_posix()}"
     else:
         return None
-    if redirect_keys(site_path) & set(redirects) and not anchor:
-        return None
+    if redirect_keys(site_path) & set(redirects):
+        return "anchor on a redirected path" if anchor else None
     return "no page and no redirect"
 
 
@@ -96,9 +96,14 @@ class ProblemProbeTest(unittest.TestCase):
         self.assertIsNone(problem("/old/", self.docs, redirects))
         self.assertIsNotNone(problem("/legal/en/doc/", self.docs, {}))
 
+    def test_anchor_on_a_redirected_path_fails(self):
+        self.assertEqual("anchor on a redirected path", problem("/old/#x", self.docs, {"old.md": "y"}))
+        self.assertEqual("no page and no redirect", problem("/old/#x", self.docs, {}))
+
     def test_unnormalized_line_fails(self):
         self.assertIsNotNone(problem("a/b/", self.docs, {}))
         self.assertIsNotNone(problem("/a/b", self.docs, {}))
+        self.assertIsNotNone(problem("/a/b#part", self.docs, {}))
 
 
 if __name__ == "__main__":
