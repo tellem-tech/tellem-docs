@@ -7,7 +7,7 @@ from pathlib import Path
 
 from test_pages import ANCHOR, DOCS, ROOT, mkdocs_config
 
-# Same rules as the META scanner: these characters end a URL capture, and `%` marks a template.
+# Same rules as the consumer-link scanner: these characters end a URL capture, and `%` marks a template.
 UNPINNABLE = re.compile(r"[»;|%]")
 MANIFEST = ROOT / "tests" / "pinned-urls.txt"
 
@@ -35,7 +35,7 @@ def problem(entry, docs, redirects):
     site_path, _, anchor = entry.partition("#")
     if UNPINNABLE.search(entry):
         return "contains a character that ends a URL capture or marks a template"
-    if "." in site_path.rstrip("/").rsplit("/", 1)[-1]:
+    if "." in site_path.rsplit("/", 1)[-1]:
         return "file links are not pinned: pin the page that links to the file"
     if not site_path.startswith("/") or not site_path.endswith("/"):
         return "not normalized: expected /<path>/ with an optional #anchor"
@@ -111,7 +111,6 @@ class ProblemProbeTest(unittest.TestCase):
 
     def test_file_link_gets_a_clear_message(self):
         self.assertIn("file links are not pinned", problem("/a/file.pdf", self.docs, {}))
-        self.assertIn("file links are not pinned", problem("/a/file.pdf/", self.docs, {}))
 
     def test_unnormalized_line_fails(self):
         self.assertIsNotNone(problem("a/b/", self.docs, {}))

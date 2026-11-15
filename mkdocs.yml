@@ -4,7 +4,7 @@ site_description: "Документация Tellem: клиентское при�
 
 # Ignored local plans; not site pages.
 exclude_docs: |
-  superpowers/
+  /superpowers/
 
 nav:
   - Главная: index.md
