@@ -155,9 +155,11 @@ Actions on the **Details** tab:
 | Button | When available | What it does |
 |---|---|---|
 | **Cancel** | **New**, **Pending processing**, **Awaiting payment** | Asks for confirmation (**Cancel the order?**). Only a manager can cancel at later stages |
-| **Repeat** | **Completed**, **Canceled**, **Returned** | Replaces the cart contents with the order's products and opens the cart; you must check out again |
+| **Repeat** | Any status | Replaces the cart contents with the order's products and opens the cart; you must check out again |
 | **Pay online** | **Awaiting payment**, with online payment | Opens the provider's page |
 | **Support** | Alongside any button above, if the owner added contact details | Opens support contacts |
+
+In **My orders**, **Repeat** is also on the order card for **Completed**, **Canceled**, **Returned** and **Payment error** orders. If your cart already has items, the app asks before replacing them.
 
 ??? example "Example: an order in the New status"
 

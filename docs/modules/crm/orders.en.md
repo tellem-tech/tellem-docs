@@ -84,7 +84,7 @@ If an “Online” order remains “Pending processing”, it can be completed w
 
 ## Online payment { #online-payment }
 
-An order paid through a link starts as “Awaiting payment”. The payment provider changes it to “Paid”, or “Payment error” if payment fails or the [payment deadline](payment-providers.md) expires.
+An order paid through a link starts as “Awaiting payment”. The payment provider changes it to “Paid”, or “Payment error” if payment fails or the [payment deadline](payment-providers.md) expires. While the order awaits payment, the order panel shows whether a payment link exists and until when it is valid.
 
 !!! warning "Wait for payment before accepting"
     “Accept order” is available before payment. After acceptance, CRM stops updating the payment state and will not set “Paid”. If you accepted the order earlier, check receipt of funds in the payment provider's account.
