@@ -115,14 +115,14 @@ If a [birthday gift](account.md#birthday) is available, its discount appears sep
 
 If product prices change before checkout, the app recalculates the order. Review the new total and confirm again; a second order is not created automatically.
 
-Click **Place Order**; the app identifies required fields that still need filling in. On **Thanks for your order!**, open **View order** or **Pay online** if you selected online payment.
+Click **Place Order**; the app identifies required fields that still need filling in. After the order is placed, **Thanks for your order!** opens with **View order**. With online payment, **One last step: payment** opens instead, with **Pay online** and **View order**.
 
 For online payment:
 
 1. The order is created as **Awaiting payment**; payment on receipt creates a **New** order.
-2. **Pay online** is available on **Thanks for your order!** and in the order card while payment is pending.
+2. **Pay online** is available on **One last step: payment** and in the order card while payment is pending. The store starts preparing the order only after payment.
 3. After payment, the app shows **Payment accepted** or **Payment was not completed**. The order status updates after the provider confirms payment.
-4. If payment fails or its deadline expires, the order receives **Payment error** and can no longer be paid.
+4. The payment deadline starts when the order is placed. If payment fails or the deadline expires, the order receives **Payment error** and can no longer be paid.
 
 <span id="_8"></span>
 
@@ -155,7 +155,7 @@ Actions on the **Details** tab:
 | Button | When available | What it does |
 |---|---|---|
 | **Cancel** | **New**, **Pending processing**, **Awaiting payment** | Asks for confirmation (**Cancel the order?**). Only a manager can cancel at later stages |
-| **Repeat** | **Completed**, **Canceled**, **Returned** | Adds the order's products to the cart and opens it; you must check out again |
+| **Repeat** | **Completed**, **Canceled**, **Returned** | Replaces the cart contents with the order's products and opens the cart; you must check out again |
 | **Pay online** | **Awaiting payment**, with online payment | Opens the provider's page |
 | **Support** | Alongside any button above, if the owner added contact details | Opens support contacts |
 
