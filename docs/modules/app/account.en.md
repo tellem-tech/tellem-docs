@@ -152,9 +152,11 @@ The installed app appears on your home screen and opens in a separate window. Se
 
     In a browser that supports installation, select **Install app** in your profile. This item appears when the browser is ready to offer installation and opens the system dialog. If it is absent after you close the dialog, reload the page.
 
+    Such a browser also shows the **Install the app** banner at the bottom of the screen. The close button or an answer in the system dialog hides the banner in this browser; the profile item stays. A browser knows only its own installations: if you installed the app from another browser, this one offers installation again.
+
 === "iPhone and iPad"
 
-    Open the store in Safari: **Share → Add to Home Screen**. **Install app** in the profile shows these instructions.
+    Open the store in Safari: **Share → Add to Home Screen**. **Install app** in the profile shows these instructions. Safari cannot tell whether the app is installed, so the item stays after installation: open the app from your Home Screen.
 
 === "Telegram"
 
