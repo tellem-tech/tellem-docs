@@ -66,7 +66,7 @@ If no methods are enabled, the field stays empty (**Select a payment method**) a
 
 ### Promo code { #promo-code }
 
-Enter a code in **Enter promo code** and apply it using the round button on the right. The field then becomes locked; tap **×** in the field to remove the code. Codes are case-sensitive; leading and trailing spaces are ignored. The discount appears under **Discount** and applies only to selected items included in the promo code.
+Enter a code in **Enter promo code**, then press Enter or use the round button on the right. The field locks after you apply the code. Tap **×** in the field to remove the code. Codes are case-sensitive. Leading and trailing spaces are ignored. The discount appears under **Discount** and applies only to selected items included in the promo code.
 
 ??? example "Example: a wrong code, DEMO250 and removing the code"
 
