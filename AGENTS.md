@@ -46,6 +46,9 @@ Never:
 - Commit messages: `<type>: <description>`, where type is feat, fix, refactor, docs, test, chore, perf or ci.
 <!-- tellem-shared:end -->
 
+### Git overrides
+- Never add `Co-authored-by` trailer flags to commit commands.
+
 ## Required project skills
 
 Use the repository-local skills before global or plugin copies with the same name. These instructions apply to Claude Code, Codex, and OpenCode.
