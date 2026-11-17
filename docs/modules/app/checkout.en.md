@@ -66,7 +66,7 @@ If no methods are enabled, the field stays empty (**Select a payment method**) a
 
 ### Promo code { #promo-code }
 
-Enter a code in **Enter promo code** and apply it using the round button on the right. The field then becomes locked; tap **×** in the field to remove the code. Codes are case-sensitive; leading and trailing spaces are ignored. The discount appears under **Discount** and applies only to selected items included in the promo code.
+Enter a code in **Enter promo code**, then press Enter or use the round button on the right. The field locks after you apply the code. Tap **×** in the field to remove the code. Codes are case-sensitive. Leading and trailing spaces are ignored. The discount appears under **Discount** and applies only to selected items included in the promo code.
 
 ??? example "Example: a wrong code, DEMO250 and removing the code"
 
@@ -154,10 +154,10 @@ Actions on the **Details** tab:
 
 | Button | When available | What it does |
 |---|---|---|
-| **Cancel** | **New**, **Pending processing**, **Awaiting payment** | Asks for confirmation (**Cancel the order?**). Only a manager can cancel at later stages |
+| **Cancel** | **New**, **Pending processing**, **Awaiting payment**, **Payment error** | Asks for confirmation. Points spent on the order are returned to your balance |
 | **Repeat** | Any status | Replaces the cart contents with the order's products and opens the cart; you must check out again |
 | **Pay online** | **Awaiting payment**, with online payment | Opens the provider's page |
-| **Support** | Alongside any button above, if the owner added contact details | Opens support contacts |
+| **Help** | **New**, **Pending processing**, **Awaiting payment**, **Completed**, **Canceled**, **Returned**, if the store added contact details | Opens support contacts |
 
 In **My orders**, **Repeat** is also on the order card for **Completed**, **Canceled**, **Returned** and **Payment error** orders. If your cart already has items, the app asks before replacing them.
 

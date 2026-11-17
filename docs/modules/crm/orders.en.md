@@ -97,11 +97,11 @@ An order paid through a link starts as “Awaiting payment”. The payment provi
 
 ## Cancellation and return { #cancellation }
 
-Before completion, choose “Cancel order”; after completion, choose “Return order”. Distributed products return to stock.
+Before completion, including when the status is “Payment error”, choose “Cancel order”. After completion, choose “Return order”. Distributed products return to stock.
 
 With one open warehouse in the sales area, confirmation returns products and sets “Canceled” or “Returned”. With several, choose where to return items in the return window and save.
 
-“Canceled”, “Returned”, and “Payment error” are final statuses with no action buttons.
+Action buttons are hidden in the “Canceled” and “Returned” statuses.
 
 !!! warning "Refunding payment"
     Changing the status to **Canceled** or **Returned** does not itself refund the customer. For a paid order, arrange the refund separately using the original payment method; for an online payment, check the procedure and result with the payment provider. The order status does not confirm that money has been refunded.
