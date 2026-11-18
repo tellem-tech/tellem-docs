@@ -51,6 +51,8 @@ In **Catalog → Products → Create**, choose the appropriate method:
 
 For a simple product, enter a category and sale price under “Main”. You can add up to 6 photos of up to 10 MB each; a 1:1 ratio is recommended. Buyers see the product's characteristics in its card. Set quantities by store under “Assortment”; CRM offers to configure zero quantities on the first save. Answering “No” saves the product with zero quantity in those stores.
 
+In “Description”, you can use headings, lists, alignment, blockquotes, code blocks, links, and text emphasis. The app preserves this formatting for buyers. The CRM editor lets you insert images in the description. The app skips these images, so add photos for buyers using the product's separate photo fields.
+
 ???+ example "Example: creating a simple product"
 
     Example with demo data. The recording shows the Russian interface.
