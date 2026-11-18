@@ -59,15 +59,9 @@ Open **Profile → your name card → Personal data** to change your first name,
 
 If another account at this store uses the address, the app offers to [merge the accounts](#linking-and-merging-accounts) if the address is verified there or that account has no way to sign in without it. When you merge with an account where the address is unverified, the app always asks you which account to keep. Click **Merge** to keep the address you verified with the code on the merged account. If you cancel the merge or the offer expires, request a new code to try again.
 
-??? example "Example: merging accounts when changing your email"
+If changing your email or merging accounts removes a verified email address, the store sends a notice to that address.
 
-    Demo accounts. The code digits are hidden.
-
-    <figure markdown="span">
-    [![The customer confirms the new email, selects which account to keep, and checks the address after merging.](../../media/app/app-email-change-merge.en.gif){ width="960" height="540" loading=lazy }](../../media/app/app-email-change-merge.en.gif)
-    </figure>
-
-If the app refuses the merge because the other account has an unverified address, sign in to that account through a linked service. Select **Verify email** in its personal data, enter the code from the email, then try changing the email on the first account again. If the button is unavailable, contact the store.
+If the app refuses the merge because the other account has an unverified address, sign in to that account through a linked service. Select **Verify email** in its personal data, enter the code from the email, then try changing the email on the first account again. If the button is unavailable or you cannot access that inbox, contact the store for help.
 
 **Change password** requires the current password and ends sessions on other devices. If you have no password of your own, for example after using only an external sign-in service, use **Set password**.
 
@@ -97,14 +91,16 @@ For a discount, save the date before the promotion period begins; for gift point
 
 Sign-in methods are at the bottom of the profile. Before unlinking, verify your email or make sure you can sign in with another linked service. Before unlinking your last contact channel, connect another notification channel under [Where to send](customer-notifications.md#channels). A password or another sign-in method alone does not meet this requirement.
 
-To link Telegram, open your store profile in a browser and select **Link** next to Telegram. Select **Open bot**, then tap **Start** and **Confirm linking** in Telegram. If Telegram did not open, select **Open bot** again. After confirming, return to the storefront. If Telegram is already linked to another account at the store, confirm the merge on the storefront.
+If your profile has no email, linking Yandex ID or VK ID fills it with the address the service provides. The field stays empty if the service sends no address or another customer already uses it. Linking keeps any email already in your profile.
+
+To link Telegram, open your store profile in a browser and select **Link** next to Telegram. Select **Open bot**, then tap **Start** and **I requested this on the website** in your private chat with the bot. Compare the account number in the bot’s message with the number on the storefront. If the numbers match and you started the request, tap **Confirm linking**. If Telegram did not open, select **Open bot** again. After confirming, return to the storefront. If Telegram is already linked to another account at the store, confirm the merge on the storefront.
 
 !!! warning "Merging cannot be undone"
     When you merge accounts by linking a service or changing your email, orders, delivery addresses, the cart, and favorites move to the account you keep. After merging by changing your email, use the address you verified with the code to sign in by email. Your previous address can no longer sign you in to the merged account.
 
 If both accounts sign in through the same service, for example with different Telegram or Yandex accounts, the selected account keeps only its own sign-in through that service, and the other account's sign-in is disconnected. The **Merge accounts** dialog shows this sign-in before you confirm.
 
-If both accounts have bonus accounts, the selected account's balance remains: the balances are not added together. If only the other account has a bonus account, it moves with its balance. The bonus transaction history is preserved.
+If both accounts have bonus accounts, the app warns you before merging that only the balance of the account you choose will be kept. If only the other account has a bonus account, it moves with its balance. The bonus transaction history is preserved.
 
 An opt-out from marketing messages on either account remains in effect after merging.
 
