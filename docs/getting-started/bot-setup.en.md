@@ -44,7 +44,7 @@ Browse our catalog and place an order here.
 Press the button below to start shopping.
 ```
 
-The bot adds a button based on the business type chosen in the [first sign-in wizard](registration.md): **Open store** for an offline store, **Open catalog** for an online store, or **Open menu** for a restaurant or café. If no type is selected, it uses **Open store**. You do not need to create this button manually.
+The bot adds a button based on the business type chosen in the [first sign-in wizard](registration.md#welcome-configuration-wizard): **Open store** for an offline store, **Open catalog** for an online store, or **Open menu** for a restaurant or café. If no type is selected, it uses **Open store**. You do not need to create this button manually.
 
 If **Multilingual editor** is enabled in [Settings → General](../modules/crm/general-settings.md), fill in the welcome message and additional button labels for the languages you use.
 
@@ -70,7 +70,7 @@ Each link appears as a separate button below the welcome message, before the app
 
 **Share** on a product page gives signed-in customers a Telegram link and guests a website link. For a Telegram link to open the app with that product, the bot needs a Mini App with the short name **app**. Without it, Telegram opens the bot chat.
 
-1. Copy the store address: **Open website** in your personal account, or the CRM user menu → **Go to app**.
+1. Click **Open store** on the subscription card in your [personal account](https://tellem.tech/lk), or choose **Go to app** from the CRM user menu. Copy the store address from the browser’s address bar.
 2. Send `/newapp` to [@BotFather](https://t.me/BotFather) and select your bot.
 3. Follow BotFather's questions; enter the store address and the short name **app**.
 
