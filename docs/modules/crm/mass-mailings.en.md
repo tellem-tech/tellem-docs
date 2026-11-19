@@ -6,7 +6,7 @@ description: "Prepare and send Tellem mailings, choose an audience, check availa
 
 # Campaigns and mailings { #mailings }
 
-Create a campaign for customers in selected segments and send a message immediately or at a scheduled time. Only the CRM owner can create and launch campaigns.
+Choose whom to contact and send a message now or on a schedule.
 
 Where: **Marketing → Mailings**. On a phone, choose **Actions → Create**.
 
@@ -30,7 +30,7 @@ CRM selects a single location automatically. Changing the location keeps standar
 
 Review the available recipient count on the right. Expand **“Excluded”** for opt-outs, unavailable channels, and the frequency limit. CRM flags an audience smaller than 30 customers; you can still save the campaign.
 
-CRM fixes the audience membership at launch. Later segment changes and new orders do not alter it; CRM checks consent and channel availability before sending. By default, a customer participates in at most one new campaign per location in seven days across all channels. An unknown result keeps the restriction. CRM does not reconstruct audience membership for older sends.
+CRM sets the participant list at launch and checks again before sending that it can contact them. By default, a customer can take part in one campaign per location in seven days. The limit applies across all channels, even if CRM has yet to confirm sending.
 
 !!! warning "Advertising requires separate consent"
     The mailing switch covers informational messages. It does not replace separate prior consent for advertising. Sellers obtain consent and are responsible for message content; see [Legal documents](../../legal/index.md).
