@@ -18,6 +18,8 @@ Where: **Catalog → Categories**, **Catalog → Products**, **Catalog → Archi
 2. For a nested category, select “Parent category”; without one, the category is at the top level. Selecting a category before creation makes it the parent.
 3. Save. To change the order, drag a category to the top edge of another row; to nest it, drop it on the middle of a row. Dropping it on the uncategorized row moves it back to the top level.
 
+If buyers in the selected chain can’t see any products in a category or its subcategories, the category stays hidden in both the catalog and home page collections. [How to check stock in a chain](inventory.md#check-chain-availability).
+
 ??? example "Example: creating and nesting a category"
 
     Example with demo data. The recording shows the Russian interface.
@@ -28,7 +30,7 @@ Where: **Catalog → Categories**, **Catalog → Products**, **Catalog → Archi
 
 Use a square image up to 10 MB. The selected category's products appear to the right of the list; on a narrow screen, use “Actions → View products”; “Remove from category” moves them to the uncategorized category.
 
-Buyers cannot see the uncategorized category, so assign products a category. A category is also hidden if the chain has no active products in it, or no available products when zero-stock items are hidden.
+The catalog hides the uncategorized category by default. Assign products a category so buyers can find them in the catalog tree.
 
 !!! warning "Deleting a category removes its products from sale"
     Deleting a category also deletes its subcategories. Their products are archived and become uncategorized. To restore them for buyers, publish the products from the archive and assign a new category.
