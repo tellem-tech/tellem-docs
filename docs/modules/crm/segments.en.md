@@ -36,6 +36,8 @@ Contact requires mailings to be enabled and a contact in the selected channel. T
 
 All selected conditions apply together; an empty field imposes no restriction. An unknown value does not match a condition: for example, no profile does not mean zero orders. Avoid the negative-feedback condition: its data is not collected, so both “Yes” and “No” produce an empty audience.
 
+Under **“RFM and repeat purchases”**, use **“Repeat purchase status”** to save customers marked [“Due” or “Asleep”](analytics.md#repeat-orders). Choose the conditions for your audience in the [repeat-purchase guides](repeat-purchases/index.md).
+
 “Edit conditions” opens an existing segment. “Save changes” updates it; “Save as new” creates a copy. “Cancel” keeps the previous conditions. If the segment was changed in another tab, save your input as new or reopen it.
 
 <span id="_4"></span>

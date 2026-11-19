@@ -40,9 +40,9 @@ Choose a task and open its guide. Set discount and messaging conditions before a
 
 - :material-chart-line: **Results**
 
-    Review repeat purchases and customer groups.
+    Choose a campaign based on repeat purchases and check its result.
 
-    [Open analytics](analytics.md) · [Save an audience](segments.md)
+    [Explore repeat-purchase campaigns](repeat-purchases/index.md) · [Open analytics](analytics.md) · [Save an audience](segments.md)
 
 </div>
 

@@ -76,6 +76,16 @@ The matrix calculates RFM over the entire history of the selected locations: a c
 
 To select customers using your own conditions and estimate whether you can contact them, open **Analytics → Segments**. See [Segments](segments.md) for steps and limitations.
 
+## Repeat orders { #repeat-orders }
+
+In **Analytics → Repeat orders**, select one location and a period.
+
+- **Repeat purchase funnel** shows how many customers placed their first order during the period and how many reached each later step by the end of the period. Click a count to open the customer list. Customers who first bought near the end of the period had less time to order again.
+- **When customers buy again** shows the median gap between orders and the suggested reminder day for each step. Half the gaps are at or below the median and half are at or above it.
+- **Who to remind** compares the time since the last purchase with the typical gap at that location. With the default settings, **“Due”** means the gap has reached the typical interval, and **“Asleep”** means it has reached twice that interval. When there is too little data to calculate a status, CRM lists those customers separately.
+
+If fewer than 50 customers in the funnel reached their second order, CRM shows counts and hides percentages, intervals, and the suggested reminder day. Choose an offer and an audience in the [repeat-purchase guides](repeat-purchases/index.md).
+
 <span id="_4"></span>
 
 ## Cohorts { #cohorts }

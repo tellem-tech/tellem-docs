@@ -136,6 +136,8 @@ buy for other reasons, so these figures do not measure additional revenue caused
 For audiences of fewer than 30 customers, consider the small sample when comparing. Older mailings without
 a saved audience and campaigns with unconfirmed sending may have no result.
 
+The [repeat-purchase guides](repeat-purchases/index.md) show how to use analytics to choose an audience and compare campaign results.
+
 <span id="create-with-ai"></span>
 
 ## AI assistance { #ai }

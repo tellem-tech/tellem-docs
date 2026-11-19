@@ -28,6 +28,12 @@ nav:
       - Сегменты: modules/crm/segments.md
       - Маркетинг:
           - modules/crm/marketing.md
+          - Повторные покупки:
+              - modules/crm/repeat-purchases/index.md
+              - Второй заказ: modules/crm/repeat-purchases/second-order.md
+              - Возврат уснувших: modules/crm/repeat-purchases/asleep.md
+              - Средний чек чемпионов: modules/crm/repeat-purchases/champions.md
+              - Напоминание о заказе: modules/crm/repeat-purchases/reorder.md
           - Рассылки: modules/crm/mass-mailings.md
           - Акции и промокоды: modules/crm/promo-codes.md
           - Первый промокод: modules/crm/first-promo-code.md
@@ -144,6 +150,11 @@ plugins:
             Главная и аналитика: Dashboard and analytics
             Сегменты: Segments
             Маркетинг: Marketing
+            Повторные покупки: Repeat purchases
+            Второй заказ: Second order
+            Возврат уснувших: Win back lapsed customers
+            Средний чек чемпионов: Champions' average order value
+            Напоминание о заказе: Reorder reminder
             Рассылки: Mailings
             Акции и промокоды: Promotions and promo codes
             Первый промокод: Your first promo code
