@@ -73,6 +73,10 @@ If using carriers, enter the weight in grams. It affects [delivery calculations]
 
 ## Change or remove products { #change-or-remove-products }
 
+In **Catalog → Products**, enter all or part of a name, category, or article code (SKU) in the search field. Article code searches ignore letter case. The ungrouped list shows matching variants. In the grouped list, each group with a match appears once.
+
+On a wide screen, click the gear above the grouped list and enable the “Sell price” and “Article” columns. For a simple product, you’ll see both values in its row. For a product with variants, click the arrow in the group row to see each variant’s price and article code.
+
 Select rows and the required action under “Actions”. Check the whole selection before changing price, quantity, or category. When duplicating products, photos are copied only with “Product photos” enabled.
 
 A product used in an order cannot be deleted from the regular list; archive it instead. Archiving hides it regardless of stock. See [Inventory](inventory.md) for other ways to remove a product temporarily.

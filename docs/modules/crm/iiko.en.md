@@ -132,7 +132,7 @@ After you save the connection, CRM updates the configured restaurants' menus onc
 Open an import's **Details** in history to see created and changed menu items, automatic archiving and restoration, reasons, and links to products. Totals cover the entire menu. If there are too many diagnostic rows, the report shows how many were omitted; all created and changed menu items are retained.
 
 !!! warning "Import enables product visibility"
-    A full import, including an automatic update, makes new products with positive stock available to customers immediately. Repeating the import enables **Show in catalog** for previously hidden cards too; sale status under **Inventory** is preserved. Publish a menu in iiko when it is ready for sale. Manually edited names, descriptions, categories, and prices apply until the next full import.
+    Publish the menu in iiko when it is ready for sale. A full import, including an automatic update, can immediately show new items in the storefront if they are visible in iiko and in stock. The import enables **Show in catalog** for items visible in iiko, including product cards previously hidden in CRM. To change a linked product's name, description, or price, make the change in iiko and repeat the import.
 
 1. In **Integrations → iiko**, find the restaurant on the connection card and click **Import products** in its row.
 2. Under **Entire menu**, click **Add products from iiko**. The import starts when the results window opens.
@@ -148,18 +148,26 @@ Open an import's **Details** in history to see created and changed menu items, a
 
 CRM adds missing products and categories, including dishes with sizes and supported extras. Categories with the same name are reused. Repeating the import updates names, descriptions, categories, prices, photos, sizes, extras, and availability without duplicates. Prices retain the fractional precision of the store currency. If iiko has no photos or the complete set cannot be downloaded, the existing CRM card keeps its photos.
 
-Service items and dishes with invalid prices are skipped; check the report for the reason. If a dish's composition or extra rules cannot be transferred without changing their meaning, CRM does not apply the menu. Correct the reported cause in iiko and repeat the import.
+During a full import, CRM uses the external iiko menu's group order when one is set. Categories stay in their existing branches. To change the order, rearrange the groups in iiko, publish the menu, and repeat the import. Changing the order of a shared category affects every menu that uses it.
+
+During a full import, CRM adds group photos from the iiko menu to categories without images and keeps existing category photos. If a photo is missing, check the group's name and image in the published iiko menu, then repeat the import.
+
+If a dish or size is missing from the catalog, open the import's **Details**. If one size has an error, CRM continues updating the other sizes. If the report shows an error, correct the data in iiko and repeat the import.
 
 Confirmed removal of a dish or size from the selected menu removes it from the restaurant's assortment. When no store retains it in its assortment, CRM archives the product. If the restaurant shares a warehouse with another store, CRM preserves the shared assortment and notes this in the report. Returning a dish or size with its original iiko link restores the same card and preserves order history. You cannot copy, delete, manually archive, or restore linked products or their groups in CRM. Change the menu in iiko and update it in CRM. Stop lists and zero stock do not archive products by themselves.
 
 If a card is already used by another iiko connection or organization, the report shows a conflict: CRM does not overwrite shared data. If the previous assortment's source is unconfirmed, CRM does not remove that assortment. Check restaurant bindings before repeating the import.
 
-Importing updates stock for products added from the menu separately for each terminal. A positive iiko limit becomes the CRM quantity without its fractional part, a stop gives zero, and no limit gives a nominal quantity. A nominal quantity does not confirm the physical number of portions. Size stock is tracked separately. The next successful full import — manual, hourly, or triggered by an iiko event — replaces the quantity, including any manually entered value; it does not add to the previous quantity. Previously linked products keep their manually managed stock.
+The import updates inventory at the warehouse of the store linked to the iiko terminal. If one terminal serves several points of sale, set them to use the same warehouse. Use a separate warehouse for each terminal binding. Check the result under **Catalog → Inventory → By stores**.
 
-If a stock warning appears, CRM saves product cards but creates no new inventory and preserves previous quantities for affected terminals. Repeat the import after the connection recovers or wait for the next hourly update. A photo error does not prevent saving the product.
+CRM rounds positive iiko limits down to whole units, sets zero for stopped items, and shows a nominal quantity for items without a limit. That quantity may differ from the actual number of portions. CRM tracks quantities per size. A full import replaces quantities for imported items, including values entered manually. CRM keeps the quantities for previously linked products whose stock you manage manually in CRM.
+
+CRM enables **On sale** for new items that are visible in iiko. If you hide a group, dish, or size in iiko, the import turns off **On sale** for those items under **Inventory**. When you show an item in iiko again, the import turns the setting back on only where it previously turned it off.
+
+If you see a stock warning, CRM keeps the product cards and previous quantities for the affected terminals. Open **Details** in the operation history and check the store's warehouse mapping and the iiko stop list. After fixing the issue, repeat the import or wait for the hourly update. If the warning concerns a transfer from an old warehouse, contact support.
 
 !!! warning "An empty menu removes products from sale"
-    A retrieval error or an unconfirmed incomplete response preserves the previous assortment. If iiko confirms again that the selected menu is empty, CRM removes previous items from the assortment under the rules above. Check a menu's contents before switching to it.
+    If loading fails, CRM keeps the existing assortment. If the menu is incomplete, CRM waits for a complete import before removing missing items. If iiko confirms that the selected menu is empty, CRM removes the previous items. Check a menu's contents before switching to it.
 
 Closing the window stops the import started from that window while preserving completed work. An independent automatic update continues running. Running the import again adds the remainder without duplicates. The summary shows processed sizes and extras; after a stop or errors, review the unprocessed part.
 

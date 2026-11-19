@@ -52,7 +52,7 @@ Keep carrier passwords and keys secret; do not include them in screenshots.
 
 **Check connection** calculates a sample delivery and shows its price and delivery time. This check never creates a shipment.
 
-Changing the CDEK account, Yandex token, or **Test mode** stops tracking existing shipments: their status becomes **Needs correction**. Complete active deliveries first or arrange the change with the Tellem team.
+Changing the CDEK account, Yandex token, or **Test mode** stops tracking existing shipments: their status becomes **Needs attention**. Complete active deliveries first or arrange the change with the Tellem team.
 
 ## Free delivery for the customer { #free-delivery }
 
@@ -89,7 +89,7 @@ For [CDEK pickup points](#cdek), the threshold and tip apply only to the default
     - For warehouse-origin rates, **CDEK origin point**, where you hand over the parcel. This is not the customer's pickup point.
     - For door-origin rates, **Full sender address**.
 
-    If registration fails after payment because these details are missing, see **Diagnostic message** in [technical delivery details](#delivery-information). Rate calculation can proceed without these details.
+    If registration fails after payment because these details are missing, see **Diagnostic message** under [Delivery information](#delivery-information). Rate calculation can proceed without these details.
 
 === "Yandex"
 
@@ -143,11 +143,12 @@ The following rules apply to shipments in CRM.
 
 The order's **Delivery information** section shows **Shipment status** and **Tracking number**. CRM checks the status automatically.
 
-If there is a problem, expand **Technical delivery details**. **Next check** shows when CRM will check again, and **Diagnostic message** explains any failure. The manual actions are in the same section.
+If the status is **Needs attention**, check **Diagnostic message** in this section. If the shipment has not been created and **Retry after correction** is available, fix the issue and click the button.
+
+Expand **Technical delivery details** for information about other failures and the remaining manual actions. **Next check** shows when CRM will request an update.
 
 - **Create shipment**: available when shipment status is **Not created** and the order is **Paid**.
 - **Check with carrier**: available after a registration attempt while the order is not **Completed**, **Canceled**, **Returned**, or **Payment error**. It does not wait for the hourly check. If the response during creation was lost, it first looks for an existing shipment to avoid a duplicate. After a few seconds, click **Refresh displayed data** to reload the order details.
-- **Retry after correction**: available for **Needs correction** if the shipment was not created.
 
 | Shipment status | Meaning and action |
 |---|---|
@@ -157,7 +158,7 @@ If there is a problem, expand **Technical delivery details**. **Next check** sho
 | In delivery | The carrier accepted the parcel. The order is In delivery; the next change follows delivery to the customer |
 | Delivered | The order is Completed; checks stop |
 | Result being confirmed | The carrier's response was lost or the status is unknown. Click Check with carrier if available; otherwise wait for the hourly check |
-| Needs correction | The carrier rejected the shipment or required details are missing. Read Diagnostic message, correct the problem, and click Retry after correction |
+| Needs attention | The carrier rejected the shipment or required details are missing. Check Diagnostic message |
 | Not delivered, Canceled | Investigate in the carrier's account and handle the order manually; it is not marked successfully completed automatically |
 
 **Examples under Diagnostic message**
@@ -166,4 +167,4 @@ If there is a problem, expand **Technical delivery details**. **Next check** sho
 - CDEK: the sender's name, phone, origin point, or address is missing, or the order has no recipient details.
 - **Shipment settings changed before registration; check them and retry after correction** means the fulfillment method or account changed while the shipment was awaiting creation.
 
-Checks stop after **Delivered**, **Not delivered**, **Canceled**, or **Needs correction**, and when the order becomes **Completed**, **Canceled**, **Returned**, or **Payment error**.
+Checks stop after **Delivered**, **Not delivered**, **Canceled**, or **Needs attention**, and when the order becomes **Completed**, **Canceled**, **Returned**, or **Payment error**.
