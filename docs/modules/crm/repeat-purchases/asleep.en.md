@@ -9,7 +9,7 @@ description: "Find customers who stopped ordering, remind them of a familiar ite
 Open **Analytics → Repeat orders** and select a location. Under **“Who to remind”**, click the count next to **“Asleep”** to open the customer list.
 
 <figure markdown="span">
-[![The Due and Asleep groups in analytics and the repeat purchase status list in the segment builder.](../../../media/crm/repeat-analytics-customer-groups.en.png){ width="504" height="475" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.en.png){ .glightbox }
+[![The Due and Asleep groups in analytics and the repeat purchase status list in the segment builder.](../../../media/crm/repeat-analytics-customer-groups.en.png){ width="504" height="694" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.en.png){ .glightbox }
 <figcaption>Open «Уснул» (Asleep) in analytics. Choose the same status when you build the segment.</figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ Open **“Profile”** in a few [customer records](../clients.md#customer-record
 Under **Marketing → Mailings**, select the campaign and click **“Result”**. Once you see **“Final result”**, check **“Share of buyers”**. Compare it with a [previous mailing](index.md#read-result) for dormant buyers over the same observation window.
 
 <figure markdown="span">
-[![Share of buyers below the bar in the purchase card.](../../../media/crm/repeat-report-buyer-share.en.png){ width="504" height="421" loading=lazy }](../../../media/crm/repeat-report-buyer-share.en.png){ .glightbox }
+[![The purchase card shows that 20 of 125 participants bought, a 16% share of buyers.](../../../media/crm/repeat-report-buyer-share.en.png){ width="504" height="419" loading=lazy }](../../../media/crm/repeat-report-buyer-share.en.png){ .glightbox }
 <figcaption>Each customer counts once in the share of buyers, even if they placed several orders.</figcaption>
 </figure>
 

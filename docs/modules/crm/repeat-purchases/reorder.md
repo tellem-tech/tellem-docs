@@ -9,7 +9,7 @@ description: "Найдите тех, кому пора заказать снов
 Откройте **Аналитика → Повторные заказы** и выберите точку. В блоке **«Кому напомнить о заказе»** нажмите число рядом с **«Пора заказать»**. В списке будут клиенты, у которых подошёл привычный срок следующей покупки.
 
 <figure markdown="span">
-[![Группы для напоминания в аналитике и состояние «Пора заказать» в конструкторе сегмента.](../../../media/crm/repeat-analytics-customer-groups.png){ width="504" height="475" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.png){ .glightbox }
+[![Группы для напоминания в аналитике и состояние «Пора заказать» в конструкторе сегмента.](../../../media/crm/repeat-analytics-customer-groups.png){ width="504" height="694" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.png){ .glightbox }
 <figcaption>В отчёте нажмите «Пора заказать». При создании сегмента выберите то же состояние в списке.</figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ description: "Найдите тех, кому пора заказать снов
 Откройте итоговый **«Результат»** в **Маркетинг → Рассылки**. Разделите **«Заказы»** на **«Аудиторию»**. Сравните число заказов на участника и **«Долю купивших»** с [прошлой рассылкой](index.md#read-result) для тех, кому пора заказать.
 
 <figure markdown="span">
-[![Соседние карточки «Заказы» и «Аудитория» в результате рассылки.](../../../media/crm/repeat-report-order-frequency.png){ width="504" height="200" loading=lazy }](../../../media/crm/repeat-report-order-frequency.png){ .glightbox }
+[![В результате напоминания видны 60 заказов при аудитории 128 участников.](../../../media/crm/repeat-report-order-frequency.png){ width="504" height="483" loading=lazy }](../../../media/crm/repeat-report-order-frequency.png){ .glightbox }
 <figcaption>«Заказы» показывают все покупки группы, «Аудитория» — всех участников рассылки.</figcaption>
 </figure>
 

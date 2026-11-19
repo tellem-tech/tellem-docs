@@ -9,7 +9,7 @@ description: "Find buyers who are due to reorder, remind them about a familiar i
 Open **Analytics → Repeat orders** and select the location. Under **“Who to remind”**, click the count next to **“Due”**. The list shows customers who have reached their usual time to reorder.
 
 <figure markdown="span">
-[![Reminder groups in analytics and the Due status in the segment builder.](../../../media/crm/repeat-analytics-customer-groups.en.png){ width="504" height="475" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.en.png){ .glightbox }
+[![Reminder groups in analytics and the Due status in the segment builder.](../../../media/crm/repeat-analytics-customer-groups.en.png){ width="504" height="694" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.en.png){ .glightbox }
 <figcaption>The report and segment builder both use «Пора заказать» (Due) for this group.</figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ Open **“Profile”** in a few [customer records](../clients.md#customer-record
 Under **Marketing → Mailings**, open the final **“Result”**. Divide **“Orders”** by **“Audience”**. Compare orders per participant and **“Share of buyers”** with a [previous mailing](index.md#read-result) to customers who were due to reorder.
 
 <figure markdown="span">
-[![The Orders and Audience cards next to each other in the mailing result.](../../../media/crm/repeat-report-order-frequency.en.png){ width="504" height="200" loading=lazy }](../../../media/crm/repeat-report-order-frequency.en.png){ .glightbox }
+[![The reminder report shows 60 orders and an audience of 128 participants.](../../../media/crm/repeat-report-order-frequency.en.png){ width="504" height="483" loading=lazy }](../../../media/crm/repeat-report-order-frequency.en.png){ .glightbox }
 <figcaption>Orders counts purchases by the group. Audience counts everyone in the mailing.</figcaption>
 </figure>
 

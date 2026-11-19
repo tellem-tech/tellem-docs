@@ -20,7 +20,7 @@ description: "Как выбрать покупателей по аналитик
 1. Откройте **Маркетинг → Рассылки → Создать**. В блоке **«Кому и зачем»** дайте кампании название, выберите точку, сегмент и цель из своего кейса.
 
     <figure markdown="span">
-    [![Поля «Сегменты» и «Цель» в форме кампании.](../../../media/crm/repeat-campaign-form.png){ width="732" height="202" loading=lazy }](../../../media/crm/repeat-campaign-form.png){ .glightbox }
+    [![В заполненной форме выбраны «Чемпионы» и цель «Увеличение среднего чека».](../../../media/crm/repeat-campaign-form.png){ width="732" height="243" loading=lazy }](../../../media/crm/repeat-campaign-form.png){ .glightbox }
     <figcaption>В поле «Сегменты» выберите получателей, в соседнем поле укажите цель рассылки.</figcaption>
     </figure>
 

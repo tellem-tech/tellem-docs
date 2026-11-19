@@ -20,7 +20,7 @@ Open **Analytics** and select the location you want to run a mailing for.
 1. Open **Marketing → Mailings → Create**. Under **“Audience and goal”**, name the campaign and select the location, segment and goal for your case.
 
     <figure markdown="span">
-    [![The Segments and Goal fields in the campaign form.](../../../media/crm/repeat-campaign-form.png){ width="732" height="202" loading=lazy }](../../../media/crm/repeat-campaign-form.png){ .glightbox }
+    [![The campaign form has Champions selected as its audience and Increase average order value as its goal.](../../../media/crm/repeat-campaign-form.png){ width="732" height="243" loading=lazy }](../../../media/crm/repeat-campaign-form.png){ .glightbox }
     <figcaption>In the Russian interface, «Сегменты» sets the audience and «Цель» sets the campaign goal.</figcaption>
     </figure>
 

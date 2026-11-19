@@ -9,7 +9,7 @@ description: "Подберите дополнение к привычному з
 Откройте **Аналитика → Клиенты** и выберите точку. В блоке **«Сегменты клиентов»** нажмите **«Чемпионы»**. В списке покупателей посмотрите колонки **«Покупки»** и **«Сумма»**.
 
 <figure markdown="span">
-[![Плитка «Чемпионы» и заголовки колонок «Покупки» и «Сумма» в списке клиентов.](../../../media/crm/repeat-analytics-champions.png){ width="504" height="260" loading=lazy }](../../../media/crm/repeat-analytics-champions.png){ .glightbox }
+[![Плитка «Чемпионы» и заголовки колонок «Покупки» и «Сумма» в списке клиентов.](../../../media/crm/repeat-analytics-champions.png){ width="504" height="651" loading=lazy }](../../../media/crm/repeat-analytics-champions.png){ .glightbox }
 <figcaption>После клика на «Чемпионы» откроется список. Нажмите на заголовок «Покупки», чтобы отсортировать клиентов по числу покупок.</figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ description: "Подберите дополнение к привычному з
 В **Маркетинг → Рассылки** откройте **«Результат»** новой и [прошлой похожей кампании](index.md#read-result). В итоговых отчётах сравните **«Средний чек»** и **«Долю купивших»**.
 
 <figure markdown="span">
-[![Карточка «Средний чек» под показателями посещений и заказов.](../../../media/crm/repeat-report-average-check.png){ width="504" height="353" loading=lazy }](../../../media/crm/repeat-report-average-check.png){ .glightbox }
+[![В отчётах по «Чемпионам» средний чек прошлой рассылки составляет 960 ₽, новой — 1 080 ₽.](../../../media/crm/repeat-report-average-check.png){ width="504" height="435" loading=lazy }](../../../media/crm/repeat-report-average-check.png){ .glightbox }
 <figcaption>Здесь видна средняя сумма одного заказа за срок наблюдения.</figcaption>
 </figure>
 

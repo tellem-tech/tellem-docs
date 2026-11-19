@@ -9,7 +9,7 @@ description: "Choose an item to go with a Champion’s usual order, then check a
 Open **Analytics → Customers** and select a location. Under **“Customer segments”**, click **“Champions”**. In the customer list, check the **“Purchases”** and **“Amount”** columns.
 
 <figure markdown="span">
-[![The Champions tile and the Purchases and Amount column headings in the customer list.](../../../media/crm/repeat-analytics-champions.en.png){ width="504" height="260" loading=lazy }](../../../media/crm/repeat-analytics-champions.en.png){ .glightbox }
+[![The Champions tile and the Purchases and Amount column headings in the customer list.](../../../media/crm/repeat-analytics-champions.en.png){ width="504" height="651" loading=lazy }](../../../media/crm/repeat-analytics-champions.en.png){ .glightbox }
 <figcaption>Open «Чемпионы» (Champions), then click «Покупки» (Purchases) to sort customers by purchase count.</figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ Open **“Orders”** in a customer record. Look up an order by number in the **
 Under **Marketing → Mailings**, open **“Result”** for the new and [previous comparable campaign](index.md#read-result). In the final reports, compare **“Average order value”** and **“Share of buyers”**.
 
 <figure markdown="span">
-[![The Average order value card beneath visits and orders in the report.](../../../media/crm/repeat-report-average-check.en.png){ width="504" height="353" loading=lazy }](../../../media/crm/repeat-report-average-check.en.png){ .glightbox }
+[![Average order value for Champions was ₽960 in the previous campaign and ₽1,080 in the new one.](../../../media/crm/repeat-report-average-check.en.png){ width="504" height="435" loading=lazy }](../../../media/crm/repeat-report-average-check.en.png){ .glightbox }
 <figcaption>This is the average amount per order during the observation window.</figcaption>
 </figure>
 

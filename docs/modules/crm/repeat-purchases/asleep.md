@@ -9,7 +9,7 @@ description: "Найдите покупателей, которые давно �
 Откройте **Аналитика → Повторные заказы** и выберите точку. В блоке **«Кому напомнить о заказе»** нажмите на число рядом с **«Уснул»**. Откроется список покупателей.
 
 <figure markdown="span">
-[![Группы «Пора заказать» и «Уснул» в аналитике и список состояний повторной покупки в конструкторе сегмента.](../../../media/crm/repeat-analytics-customer-groups.png){ width="504" height="475" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.png){ .glightbox }
+[![Группы «Пора заказать» и «Уснул» в аналитике и список состояний повторной покупки в конструкторе сегмента.](../../../media/crm/repeat-analytics-customer-groups.png){ width="504" height="694" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.png){ .glightbox }
 <figcaption>Откройте группу «Уснул» в аналитике. При создании сегмента выберите это же состояние.</figcaption>
 </figure>
 
@@ -32,7 +32,7 @@ description: "Найдите покупателей, которые давно �
 В **Маркетинг → Рассылки** выберите кампанию и нажмите **«Результат»**. Когда появится **«Итоговый результат»**, посмотрите **«Долю купивших»**. Сравните её с [прошлой рассылкой](index.md#read-result) для уснувших покупателей за такой же срок.
 
 <figure markdown="span">
-[![Доля купивших под полосой в карточке «Совершили покупку».](../../../media/crm/repeat-report-buyer-share.png){ width="504" height="421" loading=lazy }](../../../media/crm/repeat-report-buyer-share.png){ .glightbox }
+[![В карточке «Совершили покупку» видны 20 покупателей из 125 участников и доля купивших 16%.](../../../media/crm/repeat-report-buyer-share.png){ width="504" height="419" loading=lazy }](../../../media/crm/repeat-report-buyer-share.png){ .glightbox }
 <figcaption>Клиент, который вернулся несколько раз, учитывается в доле купивших один раз.</figcaption>
 </figure>
 

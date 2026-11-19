@@ -9,7 +9,7 @@ description: "Find customers who bought once, choose when to remind them and che
 Open **Analytics → Repeat orders** and select the location. In **“Repeat purchase funnel”**, see how many buyers went on to place a second order. Click **“No order #2 yet”** to open the list of customers who may need a reminder.
 
 <figure markdown="span">
-[![The repeat purchase funnel, the link to buyers who have yet to reorder and the reorder timing panel.](../../../media/crm/repeat-analytics-second-order.en.png){ width="504" height="321" loading=lazy }](../../../media/crm/repeat-analytics-second-order.en.png){ .glightbox }
+[![The repeat purchase funnel, the link to buyers who have yet to reorder and the reorder timing panel.](../../../media/crm/repeat-analytics-second-order.en.png){ width="504" height="433" loading=lazy }](../../../media/crm/repeat-analytics-second-order.en.png){ .glightbox }
 <figcaption>In the Russian interface, «Не сделали 2-й заказ» opens the list. The panel next to the funnel suggests when to remind them.</figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ In **“When customers buy again”**, find **“After order #1”**. Use the su
 Open the final report under **Marketing → Mailings → Result**. Compare **“Share of buyers”** with a [previous mailing](index.md#read-result) to people who had bought once. The report counts only the people included in the mailing.
 
 <figure markdown="span">
-[![The final result badge and the share of buyers in the purchase card.](../../../media/crm/repeat-report-buyer-share.en.png){ width="504" height="421" loading=lazy }](../../../media/crm/repeat-report-buyer-share.en.png){ .glightbox }
+[![In the final second-order report, 24 of 100 participants bought again, a 24% share of buyers.](../../../media/crm/repeat-report-second-order.en.png){ width="504" height="416" loading=lazy }](../../../media/crm/repeat-report-second-order.en.png){ .glightbox }
 <figcaption>In the purchase card, the share who bought again appears below the bar.</figcaption>
 </figure>
 

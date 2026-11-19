@@ -9,7 +9,7 @@ description: "Где найти клиентов с одной покупкой,
 Откройте **Аналитика → Повторные заказы** и выберите точку. В **«Воронке повторных покупок»** посмотрите, сколько клиентов перешли от первой покупки ко второй. Нажмите **«Не сделали 2-й заказ»**, чтобы открыть список тех, кому пригодится напоминание.
 
 <figure markdown="span">
-[![Заголовок воронки, ссылка «Не сделали 2-й заказ» и блок «Через сколько покупают снова».](../../../media/crm/repeat-analytics-second-order.png){ width="504" height="321" loading=lazy }](../../../media/crm/repeat-analytics-second-order.png){ .glightbox }
+[![Заголовок воронки, ссылка «Не сделали 2-й заказ» и блок «Через сколько покупают снова».](../../../media/crm/repeat-analytics-second-order.png){ width="504" height="433" loading=lazy }](../../../media/crm/repeat-analytics-second-order.png){ .glightbox }
 <figcaption>Ссылка в воронке открывает список клиентов. В соседнем блоке ищите подсказку о сроке.</figcaption>
 </figure>
 
@@ -31,7 +31,7 @@ description: "Где найти клиентов с одной покупкой,
 В **Маркетинг → Рассылки → Результат** откройте итоговый отчёт. Найдите **«Долю купивших»** и сравните её с [прошлой рассылкой](index.md#read-result) для клиентов с одной покупкой. В отчёте учтены только участники рассылки.
 
 <figure markdown="span">
-[![Отметка «Итоговый результат» и доля купивших в карточке «Совершили покупку».](../../../media/crm/repeat-report-buyer-share.png){ width="504" height="421" loading=lazy }](../../../media/crm/repeat-report-buyer-share.png){ .glightbox }
+[![В итоговом отчёте о втором заказе купили 24 из 100 участников, доля купивших составила 24%.](../../../media/crm/repeat-report-second-order.png){ width="504" height="416" loading=lazy }](../../../media/crm/repeat-report-second-order.png){ .glightbox }
 <figcaption>Долю участников, которые купили снова, смотрите под полосой в карточке «Совершили покупку».</figcaption>
 </figure>
 
