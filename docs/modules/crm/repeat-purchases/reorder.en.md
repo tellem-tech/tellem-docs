@@ -1,34 +1,40 @@
 ---
-description: "Find customers who are due to order again, remind them about a familiar item, and calculate orders per participant."
+description: "Find buyers who are due to reorder, remind them about a familiar item and check how often they bought."
 ---
 
-# Remind customers when it's time to reorder { #reorder }
+# Send a reminder when customers are due to reorder { #reorder }
 
-## 1. See who may be ready for a reminder { #diagnose }
+## 1. See who is due to reorder { #diagnose }
 
-1. Under **Analytics → Repeat orders**, select a location. Under **“Who to remind”**, click **“Due”** and see how many customers are in the list.
-2. In **“When customers buy again”**, check the usual number of days between orders. Look at favourite products under **“Profile”** in a few [customer records](../clients.md#customer-record). Choose a product that is in stock.
+Open **Analytics → Repeat orders** and select the location. Under **“Who to remind”**, click the count next to **“Due”**. The list shows customers who have reached their usual time to reorder.
 
-## 2. Save the segment and schedule the reminder { #launch }
+<figure markdown="span">
+[![Reminder groups in analytics and the Due status in the segment builder.](../../../media/crm/repeat-analytics-customer-groups.en.png){ width="504" height="475" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.en.png){ .glightbox }
+<figcaption>The report and segment builder both use «Пора заказать» (Due) for this group.</figcaption>
+</figure>
 
-1. Under **Analytics → Segments → Create segment**, select the same location. Set **“Order count: from”** to **2**. In **“Repeat purchase status”**, select **“Due”**.
-2. If the reminder is about one category or item, add **“Favourite category”** or **“Favourite product”**. Review the audience size and save the segment as “Due to reorder”.
-3. [Create a mailing](index.md#prepare-campaign) for that segment from **“Saved”**. Set the goal to **“Increase purchase frequency”** and the window to **7 days**. Remind customers about the familiar item and add a link.
+Open **“Profile”** in a few [customer records](../clients.md#customer-record). See what they buy regularly and pick an item that is in stock.
 
-**Example message**
+## 2. Send the reminder { #launch }
 
-> Running low on coffee? Whole coffee beans are in stock.
+1. Under **Analytics → Segments → Create segment**, choose the location. Set **“Order count: from”** to **2** and **“Repeat purchase status”** to **“Due”**. For a reminder about a specific item, add **“Favourite product”**. Save the segment.
+2. [Create a mailing](index.md#prepare-campaign) for this segment under **“Saved”**. Choose **“Increase purchase frequency”**. Remind customers that they can order the item again, add its link and schedule the mailing.
 
-???+ example "The Due to reorder segment"
-
-    Demo data. The recording shows the Russian interface.
+???+ example "How to build the Due segment"
 
     <figure markdown="span">
-    [![In the segment builder, select the Due status and check the customer count.](../../../media/crm/repeat-reorder.en.gif){ width="864" height="486" loading=lazy }](../../../media/crm/repeat-reorder.en.gif)
+    [![Selecting a repeat purchase status and checking the segment audience. The recording shows the Russian interface.](../../../media/crm/repeat-reorder.en.gif){ width="864" height="486" loading=lazy }](../../../media/crm/repeat-reorder.en.gif)
     </figure>
 
-## 3. Review the share of buyers and order count { #review }
+## 3. Check whether people ordered more often { #review }
 
-After the window closes, select the mailing and open **“Result”**. In this example, **48** of **128 participants** made a purchase (**37.5%**). They placed **60 orders**, or **0.47 orders per participant**. To calculate this metric, divide **“Orders”** by **“Audience”** and round to two decimal places.
+Under **Marketing → Mailings**, open the final **“Result”**. Divide **“Orders”** by **“Audience”**. Compare orders per participant and **“Share of buyers”** with a [previous mailing](index.md#read-result) to customers who were due to reorder.
 
-Compare with a [similar mailing](index.md#read-result). If orders per participant went up, check how the share of buyers changed.
+<figure markdown="span">
+[![The Orders and Audience cards next to each other in the mailing result.](../../../media/crm/repeat-report-order-frequency.en.png){ width="504" height="200" loading=lazy }](../../../media/crm/repeat-report-order-frequency.en.png){ .glightbox }
+<figcaption>Orders counts purchases by the group. Audience counts everyone in the mailing.</figcaption>
+</figure>
+
+**Orders per participant rose and the share of buyers held steady or grew.** Try the same timing with the next group.
+
+**Order frequency did not improve, or the share of buyers fell.** Check **“When customers buy again”**. If customers usually buy later, move the reminder closer to that date.

@@ -1,52 +1,46 @@
 ---
-description: "Select buyers with the Asleep status, give them a reason to return, and review their purchases over 14 days."
+description: "Find customers who stopped ordering, remind them of a familiar item, and check whether they came back."
 ---
 
 # Bring back dormant buyers { #asleep }
 
-## 1. Check who has gone a long time without buying { #diagnose }
+## 1. Find customers who stopped ordering { #diagnose }
 
-1. Under **Analytics → Repeat orders**, select a location. In **“Who to remind”**, click the count next to **“Asleep”** to open the list of customers who have gone a long time without buying.
-2. Open **“Profile”** in a few [customer records](../clients.md#customer-record). Check how many days have passed since their last order and which categories they prefer.
+Open **Analytics → Repeat orders** and select a location. Under **“Who to remind”**, click the count next to **“Asleep”** to open the customer list.
 
-???+ example "Who is marked Asleep"
+<figure markdown="span">
+[![The Due and Asleep groups in analytics and the repeat purchase status list in the segment builder.](../../../media/crm/repeat-analytics-customer-groups.en.png){ width="504" height="475" loading=lazy }](../../../media/crm/repeat-analytics-customer-groups.en.png){ .glightbox }
+<figcaption>Open «Уснул» (Asleep) in analytics. Choose the same status when you build the segment.</figcaption>
+</figure>
 
-    Demo data. The recording shows the Russian interface.
+Open **“Profile”** in a few [customer records](../clients.md#customer-record). Check when they last ordered and which products they like. Use that to choose an offer that gives them a reason to return.
 
-    <figure markdown="span">
-    [![Under Who to remind, open the Asleep group and check the time since the last order.](../../../media/crm/repeat-asleep-audience.en.gif){ width="864" height="486" loading=lazy }](../../../media/crm/repeat-asleep-audience.en.gif)
-    </figure>
-
-## 2. Prepare an offer and send the campaign { #launch }
-
-1. Under **Analytics → Segments → Create segment**, select the same location. Set **“Order count: from”** to **2**. In **“Repeat purchase status”**, select **“Asleep”**. Save the segment as “Dormant repeat buyers”.
-2. Pick a familiar item. This example uses coffee beans. [Create the promo code](../promo-codes.md#promo-codes) `DEMO10` for 10% off the coffee. To contact only customers who prefer coffee, add **“Favourite category”** and check how many customers remain.
-3. [Create a mailing](index.md#prepare-campaign) for that segment from **“Saved”**. Set the goal to **“Reactivate inactive customers”** and the window to **14 days**. Include the product, code, and end date in the message.
-
-**Example message**
-
-> It's been a while! Get 10% off whole coffee beans with code DEMO10 through [end date].
-
-## 3. Review purchases over 14 days { #review }
-
-After the window closes, select the sent campaign under **Marketing → Mailings** and open **“Result”**. The table shows an example final report.
-
-| Metric | Value |
-| --- | ---: |
-| Audience | 125 |
-| Made a purchase | 20 |
-| Share of buyers | 16% |
-| Orders | 24 |
-| Revenue | ₽24,000 |
-| Average order value | ₽1,000 |
-| Revenue per participant | ₽192 |
-
-???+ example "Result of a win-back campaign"
-
-    Demo data. The recording shows the Russian interface.
+???+ example "Watch how to open the list and check the last order"
 
     <figure markdown="span">
-    [![The mailing result opens from the list. A close-up shows 20 buyers out of 125 participants, a 16% share of buyers.](../../../media/crm/repeat-asleep-result.en.gif){ width="864" height="486" loading=lazy }](../../../media/crm/repeat-asleep-result.en.gif)
+    [![Open the list of Asleep buyers and check how long it has been since their last order in the Russian interface.](../../../media/crm/repeat-asleep-audience.en.gif){ width="864" height="486" loading=lazy }](../../../media/crm/repeat-asleep-audience.en.gif)
     </figure>
 
-Compare the share of buyers and revenue per participant with the [final result of a comparable campaign](index.md#read-result). If many customers **“Visited the store”** and few bought, check the promo code expiry date, stock, and offer conditions in the app.
+## 2. Remind them of a familiar item { #launch }
+
+1. Under **Analytics → Segments → Create segment**, select the same location and the **“Asleep”** repeat purchase status. To reach former regulars, set **“Order count: from”** to two. Save the segment.
+2. Open **Marketing → Mailings → Create** and choose **“Reactivate inactive customers”** as the goal. Under **“Segments”**, select your group from **“Saved”**.
+3. Add a link to the item. If you offer a discount, include the expiry date of the [promo code](../promo-codes.md#promo-codes). Check who can receive the message, then [schedule the mailing](index.md#prepare-campaign).
+
+## 3. Check whether buyers came back { #review }
+
+Under **Marketing → Mailings**, select the campaign and click **“Result”**. Once you see **“Final result”**, check **“Share of buyers”**. Compare it with a [previous mailing](index.md#read-result) for dormant buyers over the same observation window.
+
+<figure markdown="span">
+[![Share of buyers below the bar in the purchase card.](../../../media/crm/repeat-report-buyer-share.en.png){ width="504" height="421" loading=lazy }](../../../media/crm/repeat-report-buyer-share.en.png){ .glightbox }
+<figcaption>Each customer counts once in the share of buyers, even if they placed several orders.</figcaption>
+</figure>
+
+- **A higher share bought.** Try the offer with the next group of dormant buyers.
+- **The share stayed flat or fell.** Check **“Visited the store”**. If people visited but few bought, check whether the item was in stock and the discount worked.
+
+???+ example "Watch where to find returning buyers in the report"
+
+    <figure markdown="span">
+    [![The final report shows the share of buyers in the Made a purchase card in the Russian interface.](../../../media/crm/repeat-asleep-result.en.gif){ width="864" height="486" loading=lazy }](../../../media/crm/repeat-asleep-result.en.gif)
+    </figure>

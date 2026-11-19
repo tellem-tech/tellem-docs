@@ -1,35 +1,40 @@
 ---
-description: "Find customers who bought once, choose a reminder day, and check how many campaign participants ordered again."
+description: "Find customers who bought once, choose when to remind them and check whether they came back."
 ---
 
 # Get customers to place a second order { #second-order }
 
-## 1. See how many buyers came back { #diagnose }
+## 1. Find customers who bought once { #diagnose }
 
-1. Under **Analytics → Repeat orders**, select a location and a past date range that gave new buyers time to order again.
-2. In **“Repeat purchase funnel”**, compare the first two steps. In this example, 64 of 200 customers made a second purchase, a transition rate of **32%**. Click **“No order #2 yet”** to open the customer list.
-3. In **“When customers buy again”**, find **“After order #1”**. In this example, buyers typically reorder after **12 days** and CRM suggests **“Remind on day 9”**. If there is no suggestion yet, look at first and second purchase dates in the order history.
+Open **Analytics → Repeat orders** and select the location. In **“Repeat purchase funnel”**, see how many buyers went on to place a second order. Click **“No order #2 yet”** to open the list of customers who may need a reminder.
 
-???+ example "From first to second order"
+<figure markdown="span">
+[![The repeat purchase funnel, the link to buyers who have yet to reorder and the reorder timing panel.](../../../media/crm/repeat-analytics-second-order.en.png){ width="504" height="321" loading=lazy }](../../../media/crm/repeat-analytics-second-order.en.png){ .glightbox }
+<figcaption>In the Russian interface, «Не сделали 2-й заказ» opens the list. The panel next to the funnel suggests when to remind them.</figcaption>
+</figure>
 
-    Demo data. The recording shows the Russian interface.
+In **“When customers buy again”**, find **“After order #1”**. Use the suggested day to time your reminder. If there is no suggestion yet, look at the time between purchases for customers who have already returned.
+
+???+ example "How to find buyers who may need a reminder"
 
     <figure markdown="span">
-    [![The camera moves in on the funnel, where 64 of 200 buyers returned. It then shows the day-nine reminder and the button to open the list of customers who have yet to reorder.](../../../media/crm/repeat-second-order.en.gif){ width="864" height="486" loading=lazy }](../../../media/crm/repeat-second-order.en.gif)
+    [![From the repeat purchase funnel to the suggested reminder day and the customer list. The recording shows the Russian interface.](../../../media/crm/repeat-second-order.en.gif){ width="864" height="486" loading=lazy }](../../../media/crm/repeat-second-order.en.gif)
     </figure>
 
-## 2. Build the segment and launch the campaign { #launch }
+## 2. Send a product reminder { #launch }
 
-1. Open **Analytics → Segments → Create segment** and select the same location. Set both **“Order count: from”** and **“Order count: to”** to **1**.
-2. For this example, set **“Days since last order: from”** to **9** and **“Days since last order: to”** to **15**. Save the segment as “Second order”.
-3. [Create a mailing](index.md#prepare-campaign). Under **“Saved”**, choose “Second order”. Set the goal to **“Increase purchase frequency”** and the window to **7 days**. Link to a popular item that is in stock.
+1. Under **Analytics → Segments → Create segment**, select the same location. Set both **“Order count: from”** and **“to”** to **1**. Set **“Days since last order”** to a range that includes the reminder day. Save the segment.
+2. [Create a mailing](index.md#prepare-campaign). Choose the segment under **“Saved”** and select **“Increase purchase frequency”**. Suggest an item in stock, include its link and schedule the mailing.
 
-**Example message**
+## 3. Check who came back { #review }
 
-> Thanks for your first order! If you're shopping for coffee to brew at home, try our whole beans.
+Open the final report under **Marketing → Mailings → Result**. Compare **“Share of buyers”** with a [previous mailing](index.md#read-result) to people who had bought once. The report counts only the people included in the mailing.
 
-## 3. Check how many participants ordered again { #review }
+<figure markdown="span">
+[![The final result badge and the share of buyers in the purchase card.](../../../media/crm/repeat-report-buyer-share.en.png){ width="504" height="421" loading=lazy }](../../../media/crm/repeat-report-buyer-share.en.png){ .glightbox }
+<figcaption>In the purchase card, the share who bought again appears below the bar.</figcaption>
+</figure>
 
-After the window closes, select the mailing and open **“Result”**. In this example, **24** of **100 participants** made a purchase. The **“Share of buyers”** was **24%**.
+**The share rose.** A larger share of participants came back for a second order. Try the reminder again with the next group.
 
-Compare 24% with the [result of a similar mailing](index.md#read-result). The funnel shows **32% among all new buyers** in the selected range. The mailing result shows **24% among its participants**.
+**The share stayed flat or fell.** Try a different reminder day next time, keeping the product and channel the same. This helps you check whether the timing suited your buyers.
