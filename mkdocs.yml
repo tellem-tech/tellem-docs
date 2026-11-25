@@ -20,6 +20,7 @@ nav:
           - modules/crm/catalog.md
           - Магазины: modules/crm/stores-and-delivery.md
           - Категории и товары: modules/crm/products-and-categories.md
+          - Модификаторы товаров: modules/crm/product-modifiers.md
           - Объединение товаров по цвету: modules/crm/product-colors.md
           - Оформление: modules/crm/main-page.md
           - Наличие и снятие с продажи: modules/crm/inventory.md
@@ -143,6 +144,7 @@ plugins:
             Каталог: Catalog
             Магазины: Stores
             Категории и товары: Categories and products
+            Модификаторы товаров: Product modifiers
             Объединение товаров по цвету: Grouping products by color
             Оформление: Design
             Наличие и снятие с продажи: Inventory and removing products from sale

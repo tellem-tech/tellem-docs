@@ -18,7 +18,7 @@ description: "Подготовка каталога Tellem: магазины, к
 
     Создать товар вручную, добавить варианты и распределить товары по категориям.
 
-    [Добавить товары](products-and-categories.md)
+    [Добавить товары](products-and-categories.md) · [Добавить опции к товару](product-modifiers.md)
 
 - :material-file-upload-outline: **Импорт**
 

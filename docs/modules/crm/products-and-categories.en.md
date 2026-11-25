@@ -61,6 +61,8 @@ For a simple product, enter a category and sale price under “Main”. You can 
 
 Enter prices in the store currency with its allowed number of decimal places. For example, a ruble price can be `79.90`. CRM rejects excess significant decimal places when saving a price.
 
+To offer gift wrap with a product, [add a modifier](product-modifiers.md).
+
 For a product with variants, add at least one variative attribute and set each variant's price, article code, and photo. Attribute combinations must be unique. See [Combining two products by color](product-colors.md) for an example of a color selector and merging existing products.
 
 For [iiko products](iiko.md#products), CRM creates variants from the menu sizes. Manage those sizes in iiko; you cannot add, delete, or copy these variants manually in CRM.

@@ -26,7 +26,7 @@ The catalog must already contain two simple products:
 If the products do not exist, add each through **Create → Create single** — see [Categories and products](products-and-categories.md). You cannot merge iiko products manually: their variants are created from [menu sizes](iiko.md#sizes-and-extras).
 
 !!! warning "Before merging"
-    The selected products must not yet have any orders. Only regular products can be merged. Record their stock quantities by store and article codes: you will need to set them again after merging. Saving the new group replaces the original products.
+    Choose regular products with no orders, [modifiers](product-modifiers.md), or modifier groups. Record their stock quantities by store and article codes. You will need to enter them again after merging. Saving the new group replaces the original products.
 
 <span id="2"></span>
 

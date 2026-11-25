@@ -62,11 +62,11 @@ Check the description, specifications, price, and availability. If the product h
 
 **Share** opens the system share menu or copies a link. For signed-in customers, the link opens the product inside Telegram if the store connected a bot; otherwise, it opens the website.
 
-### Dish size and extras { #dish-options }
+### Product options { #dish-options }
 
-If a dish has sizes, choose the product variant you want. When adding a dish with extras, choose them in the panel that opens. Required groups have an “*”; the allowed quantity appears beside them. An extra has “−” and “+” buttons when the store allows several portions. Complete the required choices before adding the dish.
+On the product card, you can choose options such as gift wrap for a candle or oat milk for coffee. If the product comes in several sizes, select a size first. A star marks required options. The label beside it tells you how many you can choose. Use **−** and **+** when you can add more than one.
 
-Check the total price including extras before adding it. Promotions and birthday discounts reduce the price of the dish itself; extras keep their price.
+Check the price with your options before adding the product to the cart. If a required option is marked **Unavailable**, you cannot add the product to the cart until the option is available again. For dishes from an iiko menu, promotions and birthday discounts reduce the price of the dish or selected size. Extras keep their price.
 
 <span id="_5"></span>
 
@@ -97,7 +97,9 @@ Your guest cart stays in this browser when you reload or return from sign-in. Ea
 
 Guest products are not reserved. If the store reserves products in a signed-in customer’s cart, the reservation and cart quantities reset after a period of inactivity. Check your cart again before checkout.
 
-For a dish with extras, tap **Edit** to change the selection. The same product with different extras or extra quantities occupies separate lines; identical selections merge. The order retains the size and extras.
+To change your options, tap **Edit** beside the item in the cart. A product with gift wrap and the same product without it appear on separate lines. Quantities add up when both the product and its options match. The order retains the size and options.
+
+If an option becomes unavailable before you sign in, a notice in the cart shows your previous selection. Tap **Open item** to choose again or **Dismiss** to hide the notice. You can check out with your other items.
 
 <span id="_7"></span>
 
@@ -108,4 +110,4 @@ Addresses, bonus points, language, theme, and installation are available in your
 [Tellem legal documents](../../legal/index.md) are linked in the app: in the footers of the home screen, profile, and **About the app**, during sign-in and checkout, and in the cookie banner. Documents open in the interface language.
 
 !!! info "For store owners"
-    Configure [product color variants](../crm/product-colors.md) and [the home screen and app colors](../crm/main-page.md). Import dish sizes and extras from the [iiko menu](../crm/iiko.md#sizes-and-extras). Warnings, reservations, and profile information sections are under [general settings](../crm/general-settings.md). Get a location's link and QR code from its [store card](../crm/stores-and-delivery.md).
+    Set up [product options in CRM](../crm/product-modifiers.md) or import dish sizes and extras from the [iiko menu](../crm/iiko.md#sizes-and-extras). You can also configure [product color variants](../crm/product-colors.md) and [the home screen and app colors](../crm/main-page.md). Warnings, reservations, and profile information sections are under [general settings](../crm/general-settings.md). Get a location's link and QR code from its [store card](../crm/stores-and-delivery.md).

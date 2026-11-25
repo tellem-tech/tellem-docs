@@ -18,7 +18,7 @@ For a new store, first set up [locations, fulfillment, and payments](stores-and-
 
     Create products manually, add variants, and assign categories.
 
-    [Add products](products-and-categories.md)
+    [Add products](products-and-categories.md) · [Add product options](product-modifiers.md)
 
 - :material-file-upload-outline: **Import**
 

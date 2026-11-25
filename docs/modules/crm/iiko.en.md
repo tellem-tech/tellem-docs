@@ -183,7 +183,7 @@ Linking preserves product cards, prices, photos, stock, and history; no new prod
 
 A full import creates dish sizes as product variants with their own prices and stock. Change the size selection in iiko: after the next full import, removed sizes become unavailable, while returning sizes keep their existing cards. You cannot create or delete these variants manually in CRM.
 
-In the product card's **Modifiers** section, check extras, groups, required choices, limits, and free quantities. This section shows data from the last full import. Change it in iiko; CRM receives the changes during a [menu update](#import-products). Customers cannot order a linked dish before the first full import. Extras do not create separate catalog products.
+On the product card's **Modifiers** tab, select an extra and click **Open**. The window shows its photo, prices, and selection rules from the last full import. To change the extra, edit it in iiko and [update the menu](#import-products). Customers cannot order a linked dish before the first full import. Extras do not create separate catalog products.
 
 Customers choose sizes and extras in the [product card and cart](../app/ui-and-pages.md#product-card). CRM orders show the selected size, extras, and their quantities. Promotions and birthday discounts reduce the dish or selected size price; extras are added without that discount.
 
