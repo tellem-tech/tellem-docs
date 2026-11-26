@@ -12,7 +12,7 @@ You need an account to check out — see [Account, installation, and notificatio
 
 ## Checkout screen { #checkout-screen }
 
-If you leave before placing the order, the app asks **Leave checkout?** Choose **Continue checkout** to keep your entered details on screen, or **Leave** to close checkout without saving them. The confirmation also appears when you use the browser's Back button.
+If you leave before placing the order, the app asks **Leave checkout?** Choose **Continue** to keep your entered details on screen, or **Leave** to close checkout without saving them. The confirmation also appears when you use the browser's Back button.
 
 <span id="_3"></span>
 
