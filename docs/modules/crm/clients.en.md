@@ -19,7 +19,7 @@ Where: **Clients**. A buyer appears in the list after using the application; you
 
 ## Find and contact a customer { #find-and-contact-a-customer }
 
-Enter a query and press Enter: search matches first name, last name, patronymic, Telegram username, and email. For phone numbers, use the column header filter. The Excel button exports the table.
+Enter a query and press Enter: search matches first name, last name, patronymic, Telegram username, email, and phone number. You can enter a full or partial number in any format: with +7 or 8, brackets, or dashes. The Excel button exports the table.
 
 Open the customer portrait and click “Contact” next to the customer's name: it opens Telegram or, if the customer has no Telegram username, your email application. If both are available, the envelope button beside it opens email. You can use an unverified email address to send a message. Use [Mailings](mass-mailings.md) to message several customers.
 
